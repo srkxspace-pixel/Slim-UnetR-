@@ -1,6 +1,6 @@
 # Testing and reproducibility
 
-Use Python 3.11 and the pinned requirements from the README. Run commands from the repository root.
+Use Python 3.11 and the pinned requirements from the README. Run commands from the repository root. See the [recorded clean-clone verification](VERIFICATION.md) for actual outcomes and platform limits.
 
 ## Fast regression checks
 

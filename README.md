@@ -150,6 +150,8 @@ These commands are provided for portability; local verification was on Windows. 
 
 With the server running, use another terminal to run `python verify_local_ui.py`. It exercises real uploads in both 3D formats, references, planes, downloads and request protection. See [testing](docs/TESTING.md) and [live presentation notes](docs/DEMO.md).
 
+A clean clone in a newly installed Windows CPU environment passed all 23 tests, real inference and HTTP integration checks. The bundled case's masks matched the earlier GPU result exactly. See [verification evidence and remaining platform limits](docs/VERIFICATION.md).
+
 We demonstrate the **authors' released architecture and weights**; we do **not** claim reproduction of the paper's **92.44% BraTS2021 benchmark**. The bundled case is MSD Task01, with unverified overlap against checkpoint training. Historical local MSD scores and 2D slice scores have separate experimental scope. See [evaluation/cross-verification](docs/EVALUATION.md).
 
 ## Project structure
