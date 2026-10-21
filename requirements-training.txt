@@ -1,0 +1,7 @@
+# Optional legacy upstream training scripts; not needed for either live demo.
+-r requirements.txt
+torchvision==0.21.0
+accelerate==0.23.0
+timm==0.9.7
+objprint==0.2.3
+einops==0.8.2

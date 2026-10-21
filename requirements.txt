@@ -1,0 +1,11 @@
+# Inference/UI dependencies. Install the documented CPU or CUDA PyTorch build first.
+torch==2.6.0
+numpy==1.26.4
+monai==1.2.0
+scipy==1.14.1
+matplotlib==3.11.2
+nibabel==5.4.2
+easydict==1.13
+PyYAML==6.0.3
+Pillow==12.3.0
+Werkzeug==3.1.9

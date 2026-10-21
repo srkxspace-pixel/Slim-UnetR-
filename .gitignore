@@ -1,0 +1,42 @@
+# Local environments, caches and editor files
+.venv*/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Generated results and local datasets (preserved on disk)
+/outputs/
+/data/
+/datasets/
+/logs/
+/wandb/
+/model_store/
+*.pt
+*.pth
+*.bin
+*.npy
+*.npz
+*.nii
+*.nii.gz
+*.tar
+*.tar.gz
+*.zip
+*.partial
+
+# The only versioned MRI data: a small attributed public demo case.
+!/examples/BRATS_409/image.nii.gz
+!/examples/BRATS_409/reference.nii.gz
+
+# Credentials and machine-specific configuration
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.log

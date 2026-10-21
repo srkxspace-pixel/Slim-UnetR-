@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="ui-token" content="__UI_TOKEN__">
+  <title>Slim UNETR · Local MRI prediction</title>
+  <link rel="stylesheet" href="/style.css">
+  <script src="/app.js" defer></script>
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark" aria-hidden="true">S</span><span>Slim UNETR <span class="brand-caption">LOCAL WORKSPACE</span></span></div>
+    <span class="local-badge"><span aria-hidden="true">●</span> On this laptop</span>
+  </header>
+  <main>
+    <div class="page-heading"><div><p class="eyebrow">LOCAL PRETRAINED MRI MODELS</p><h1>Brain MRI segmentation</h1><p class="intro">Upload a complete 3D case or an individual 2D MRI slice. Inspect a fresh prediction.</p></div><div id="model-status" class="model-status" role="status">Loading model…</div></div>
+    <div class="workspace">
+      <aside class="input-panel">
+        <form id="prediction-form">
+          <div class="section-heading"><span class="step">1</span><h2>MRI inputs</h2></div>
+          <p id="input-description" class="help">Aligned, skull-stripped 3D brain MRI in NIfTI format. All four modalities are required.</p>
+          <fieldset class="format-options"><legend>Input format</legend><label><input type="radio" name="mode" value="four_files"> Four 3D files</label><label><input type="radio" name="mode" value="four_dimensional" checked> One 4D file</label><label><input type="radio" name="mode" value="single_slice"> JPG / PNG slice</label></fieldset>
+          <div id="four-files">
+            <label class="file-field">FLAIR<input type="file" name="flair" accept=".nii,.nii.gz" required></label>
+            <label class="file-field">T1<input type="file" name="t1" accept=".nii,.nii.gz" required></label>
+            <label class="file-field">T1 contrast <span class="subtle">T1ce / T1gd</span><input type="file" name="t1ce" accept=".nii,.nii.gz" required></label>
+            <label class="file-field">T2<input type="file" name="t2" accept=".nii,.nii.gz" required></label>
+          </div>
+          <div id="four-dimensional" hidden>
+            <label class="file-field"><span id="image-input-label">Four-channel MRI</span><input type="file" name="image" accept=".nii,.nii.gz" disabled></label>
+            <p id="image-input-hint" class="input-hint">Channel order must be FLAIR → T1 → T1ce → T2. A 4D time series is not a substitute for these modalities.</p>
+          </div>
+          <details id="reference-options"><summary>Reference mask <span class="subtle">optional</span></summary><p id="reference-help" class="help">Add a matching annotation to compare ground truth and calculate Dice / HD95.</p><label class="file-field"><span id="reference-input-label">Reference NIfTI</span><input type="file" name="reference" accept=".nii,.nii.gz"></label><label id="label-scheme-field" class="select-field">Reference label definitions<select name="label_scheme"><option value="">Choose if supplying a reference</option><option value="msd">MSD Task01: 1 edema, 2 non-enhancing, 3 enhancing</option><option value="brats">BraTS 2021: 1 core, 2 edema, 4 enhancing</option></select></label></details>
+          <label class="confirmation"><input type="checkbox" name="confirmed" value="yes" required><span id="confirmation-text">I confirm these are the four stated brain MRI modalities, co-registered and skull-stripped, in the stated order.</span></label>
+          <p id="upload-limit" class="help upload-limit">Maximum combined upload: 384 MB. Files and generated results stay on this laptop.</p>
+          <button id="run-button" class="primary-button" type="submit" disabled>Run prediction <span aria-hidden="true">→</span></button>
+        </form>
+        <div class="example"><p>Want to check the workflow first?</p><button type="button" id="real-example" class="secondary-button" disabled>Run real local example · BRATS_409</button><p class="help">Runs fresh inference on an existing MRI and reference mask. No generated inputs.</p></div>
+      </aside>
+      <section class="results-panel" aria-label="Prediction workspace">
+        <div id="error" class="error-message" role="alert" hidden></div>
+        <div id="job-progress" class="job-progress" role="status" aria-live="polite" hidden><div class="progress-heading"><strong id="stage">Receiving inputs</strong><span id="elapsed">0 s</span></div><progress id="progress-bar"></progress><p id="progress-detail"></p></div>
+        <div id="empty-state" class="empty-state"><span class="empty-icon" aria-hidden="true">＋</span><h2>Your prediction will appear here</h2><p>Choose a 3D MRI case or one JPG/PNG MRI slice.<br>Each input format uses its corresponding pretrained model.</p><div class="empty-tags"><span>Local prediction</span><span>No training</span><span>Optional reference comparison</span></div></div>
+        <div id="result" hidden>
+          <div class="result-heading"><div><p class="eyebrow">NEW INFERENCE RESULT</p><h2 id="result-title">Prediction ready</h2></div><a id="download-bundle" class="download-button">Download result bundle ↓</a></div>
+          <p id="result-context" class="help"></p>
+          <div class="viewer-controls"><label>Modality<select id="modality"><option value="flair">FLAIR</option><option value="t1">T1</option><option value="t1ce">T1 contrast</option><option value="t2">T2</option></select></label><label>Plane<select id="axis"><option value="axial">Axial</option><option value="coronal">Coronal</option><option value="sagittal">Sagittal</option></select></label><label>Region<select id="region"><option value="all">All regions</option><option value="TC">Tumour core · TC</option><option value="WT">Whole tumour · WT</option><option value="ET">Enhancing tumour · ET</option></select></label><label class="opacity-control">Overlay <span id="opacity-value">55%</span><input id="opacity" type="range" min="0" max="100" value="55"></label></div>
+          <div id="slice-control" class="slice-control"><label for="slice">Slice <strong id="slice-value">0</strong><span id="slice-total"></span></label><input id="slice" type="range" min="0" max="154" value="77"></div>
+          <div class="image-grid"><figure><figcaption id="mri-caption">MRI · FLAIR</figcaption><img id="mri-image" alt="Uploaded MRI slice"></figure><figure id="reference-panel"><figcaption>Reference annotation</figcaption><img id="reference-image" alt="Reference mask over the same MRI slice"><div id="no-reference" class="no-reference" hidden>No reference supplied.<br>Prediction does not require one.</div></figure><figure><figcaption id="prediction-caption">Slim UNETR prediction</figcaption><img id="prediction-image" alt="Predicted tumour regions over the same MRI slice"></figure></div>
+          <div id="volume-legend" class="legend"><span><i class="wt"></i> Whole tumour only</span><span><i class="tc"></i> Core excluding enhancing tumour</span><span><i class="et"></i> Enhancing tumour</span></div><div id="slice-legend" class="legend" hidden><span><i class="et"></i> Predicted tumour</span><span><i class="wt"></i> Reference tumour</span></div><p id="viewer-status" class="help" role="status"></p><p id="slice-result-note" class="help" hidden></p>
+          <section class="metrics-section"><div class="section-heading"><span class="step">2</span><h2>Reference comparison</h2></div><p id="metrics-message" class="help"></p><div id="metrics-table-wrap" hidden><table><thead><tr><th>Region</th><th id="dice-heading">Whole-volume Dice</th><th id="distance-heading">HD95</th></tr></thead><tbody id="metrics-body"></tbody></table><p id="metric-note" class="metric-note">An empty reference region has undefined Dice. If exactly one mask is empty, HD95 is infinite. Metrics describe this uploaded case, not reproduced paper results.</p></div></section>
+          <div class="result-footer"><span id="verification" class="verified"></span><a id="download-report">Download run report</a></div>
+        </div>
+      </section>
+    </div>
+    <footer class="page-footer">Local research demonstration: Slim UNETR for four-modality 3D MRI; BRISC SegFormer-B5 for individual T1 MRI slices. Predictions may miss tumours or mark healthy tissue. An empty mask does not rule out a tumour. Not for clinical diagnosis.</footer>
+  </main>
+</body>
+</html>

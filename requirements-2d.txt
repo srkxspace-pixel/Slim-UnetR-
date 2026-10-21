@@ -1,0 +1,10 @@
+# Pinned additions for the offline BRISC 2D inference path; existing PyTorch is retained.
+transformers==4.57.6
+huggingface-hub==0.36.2
+tokenizers==0.22.2
+safetensors==0.8.0
+regex==2026.9.29
+requests==2.34.2
+charset-normalizer==3.5.2
+urllib3==2.8.0
+certifi==2026.10.19
