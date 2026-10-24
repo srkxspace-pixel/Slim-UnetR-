@@ -1,0 +1,159 @@
+{
+  "label": "Local inference using official BraTS 2021 weights \u2014 not reproduced paper results",
+  "input_mode": "four_dimensional",
+  "uploaded_names": {
+    "image": "image.nii.gz",
+    "reference": "reference.nii.gz"
+  },
+  "source_sha256": {
+    "image": "74a4d182237e887ba5ec58b5fc4762c3b7913388d3122d1285525aacf9eeead2",
+    "reference": "a4c0573207472dc2a9cd334d36aee31dd555a28de5ad301bbcdaeac89ecf021e"
+  },
+  "original_grid": {
+    "shape": [
+      240,
+      240,
+      155
+    ],
+    "affine": [
+      [
+        1.0,
+        0.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        1.0,
+        0.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        1.0,
+        0.0
+      ],
+      [
+        0.0,
+        0.0,
+        0.0,
+        1.0
+      ]
+    ],
+    "spacing_mm": [
+      1.0,
+      1.0,
+      1.0
+    ]
+  },
+  "processed_shape": [
+    240,
+    240,
+    155
+  ],
+  "processed_affine": [
+    [
+      1.0,
+      0.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      1.0,
+      0.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      1.0,
+      0.0
+    ],
+    [
+      0.0,
+      0.0,
+      0.0,
+      1.0
+    ]
+  ],
+  "modalities": [
+    "flair",
+    "t1",
+    "t1ce",
+    "t2"
+  ],
+  "regions": [
+    "TC",
+    "WT",
+    "ET"
+  ],
+  "reference_provided": true,
+  "reference_label_scheme": "msd",
+  "checkpoint_release": "https://github.com/deepang-ai/Slim-UNETR/releases/tag/v1.0.0",
+  "device": "cpu",
+  "gpu": null,
+  "checkpoint_sha256": "8adbc8ce26c67a6783da8aea03edb95f530c16b4416185501a2711472677d5f4",
+  "parameters": 1783425,
+  "model_state_sha256_before": "d32cd28ce7796fad6865eed90e397776681ba010b18885b9cc72d90070cf9e0a",
+  "model_state_sha256_after": "d32cd28ce7796fad6865eed90e397776681ba010b18885b9cc72d90070cf9e0a",
+  "model_state_unchanged": true,
+  "checkpoint_unchanged": true,
+  "training": false,
+  "synthetic_inputs": false,
+  "threshold": 0.5,
+  "threshold_operator": ">",
+  "roi": [
+    128,
+    128,
+    128
+  ],
+  "overlap": 0.5,
+  "normalization": "Nonzero, per-channel; RAS, 1 mm spacing",
+  "output_space": "Preprocessed RAS / 1 mm. Use FLAIR_processed.nii.gz as the matching background.",
+  "metrics": {
+    "TC": {
+      "dice": 0.9632935907522847,
+      "hd95_mm": 1.4142135381698608,
+      "hd95_status": "finite",
+      "reference_voxels": 32983,
+      "predicted_voxels": 33109
+    },
+    "WT": {
+      "dice": 0.9651412129098473,
+      "hd95_mm": 1.7320507764816284,
+      "hd95_status": "finite",
+      "reference_voxels": 159632,
+      "predicted_voxels": 167746
+    },
+    "ET": {
+      "dice": 0.9497055572967356,
+      "hd95_mm": 1.4142135381698608,
+      "hd95_status": "finite",
+      "reference_voxels": 30477,
+      "predicted_voxels": 30146
+    }
+  },
+  "default_slice": 90,
+  "metric_policy": "Dice excludes empty reference regions; HD95 is symmetric max of directed 95th percentiles in mm. One empty mask: Infinity. Both empty: undefined.",
+  "inference_seconds": 4.2979727999991155,
+  "total_processing_seconds": 9.786127100000158,
+  "downloads": [
+    "report.json",
+    "FLAIR_processed.nii.gz",
+    "prediction_TC.nii.gz",
+    "prediction_WT.nii.gz",
+    "prediction_ET.nii.gz",
+    "reference_TC.nii.gz",
+    "reference_WT.nii.gz",
+    "reference_ET.nii.gz",
+    "prediction_bundle.zip"
+  ],
+  "versions": {
+    "torch": "2.5.1+cu121",
+    "monai": "1.2.0",
+    "nibabel": "5.4.2",
+    "numpy": "1.26.4"
+  }
+}

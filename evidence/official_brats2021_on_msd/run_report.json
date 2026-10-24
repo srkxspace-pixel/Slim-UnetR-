@@ -1,0 +1,110 @@
+{
+  "official_release": "https://github.com/deepang-ai/Slim-UNETR/releases/tag/v1.0.0",
+  "checkpoint": "D:\\SRM Projects\\Slim-UNETR-main\\model_store\\official_brats2021\\brats21_pytorch_model.bin",
+  "checkpoint_sha256": "8adbc8ce26c67a6783da8aea03edb95f530c16b4416185501a2711472677d5f4",
+  "checkpoint_training_dataset": "BraTS 2021 (per authors' release)",
+  "evaluation_dataset": "D:\\SRM Projects\\datasets\\Task01_BrainTumour",
+  "limitation": "Cross-dataset demonstration; training/test patient overlap with BraTS 2021 is not verified. Not an independent benchmark or paper reproduction.",
+  "split": {
+    "method": "existing manifest order and configured train_ratio",
+    "validation_start_index": 387
+  },
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce GTX 1650",
+  "versions": {
+    "python": "3.11.9",
+    "torch": "2.5.1+cu121",
+    "monai": "1.2.0",
+    "numpy": "1.26.4"
+  },
+  "inference": {
+    "roi": [
+      128,
+      128,
+      128
+    ],
+    "overlap": 0.5,
+    "threshold": 0.5,
+    "training": false,
+    "synthetic_inputs": false
+  },
+  "regions": [
+    "TC",
+    "WT",
+    "ET"
+  ],
+  "nifti_space": "Preprocessed RAS orientation and 1 mm spacing; region volume last axis is TC, WT, ET",
+  "cases": [
+    {
+      "case": "BRATS_409",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_409.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_409.nii.gz",
+      "image_sha256": "74a4d182237e887ba5ec58b5fc4762c3b7913388d3122d1285525aacf9eeead2",
+      "label_sha256": "a4c0573207472dc2a9cd334d36aee31dd555a28de5ad301bbcdaeac89ecf021e",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "dice": {
+        "TC": 0.9632935907522847,
+        "WT": 0.9651412129098473,
+        "ET": 0.9497055572967356
+      },
+      "inference_seconds": 6.156117200000153,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": 90,
+      "png": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\official_brats2021_on_msd\\BRATS_409.png",
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\official_brats2021_on_msd\\BRATS_409_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_258",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_258.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_258.nii.gz",
+      "image_sha256": "e9b1e64c4a44888a95ff3be871379433d8c603f043d70f3b7664d42d0ed4640b",
+      "label_sha256": "28bebfa055a320c887e5e2caa1f1a7daf8f1e1078b314f3dca56b8ad7cc67e40",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "dice": {
+        "TC": 0.9004140469253182,
+        "WT": 0.871396367501787,
+        "ET": 0.9186766413001419
+      },
+      "inference_seconds": 2.0375755999998546,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": 64,
+      "png": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\official_brats2021_on_msd\\BRATS_258.png",
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\official_brats2021_on_msd\\BRATS_258_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_346",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_346.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_346.nii.gz",
+      "image_sha256": "12818670905fb3a284dd6f831bfcdfa99c08536cf35c165797b25d48589b1122",
+      "label_sha256": "2db3f084dbaa5b6728d03dd40c045cb0605475c1e6e13a93f26ce6d9b3211b39",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "dice": {
+        "TC": 0.9265503419004951,
+        "WT": 0.8338597128669517,
+        "ET": 0.8335477003592495
+      },
+      "inference_seconds": 1.9027908000002753,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": 100,
+      "png": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\official_brats2021_on_msd\\BRATS_346.png",
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\official_brats2021_on_msd\\BRATS_346_pred_regions.nii.gz"
+    }
+  ],
+  "model_state_unchanged": true,
+  "checkpoint_file_unchanged": true
+}

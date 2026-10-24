@@ -1,5 +1,7 @@
 # Slim UNETR — Local MRI Segmentation Demo
 
+> Received this as a handoff? Start with [HANDOFF.md](HANDOFF.md) (what was done, one-script setup, saved evidence). The Git clone steps below are not needed for the zip route.
+
 Run the authors' pretrained **Slim UNETR** model on a real four-modality 3D brain MRI, inspect tumour predictions in a local browser, and download masks and a run report. A real **MRI case and reference annotation are included**, so a fresh clone needs no full-dataset download to demonstrate inference.
 
 An optional **BRISC SegFormer-B5** extension supports individual JPG/PNG T1 MRI slices. It is a separate model; its outputs are not Slim UNETR paper results.

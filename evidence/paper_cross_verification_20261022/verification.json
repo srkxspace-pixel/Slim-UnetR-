@@ -1,0 +1,152 @@
+{
+  "audit_date_local": "2026-10-22",
+  "paper_doi": "10.1109/TMI.2023.3326188",
+  "upstream_release_commit": "6ae2f4e7498102fc17c823f28ca876a47fdbf1e7",
+  "verdict": "Official core implementation and checkpoint confirmed; published benchmark reproduction NOT established.",
+  "paper_numbers_source": "Authors release figures/table1.jpg, table2.jpg, table3.jpg; visually read; compared bytewise with local copies. Abstract independently confirms BraTS mean Dice 92.44%.",
+  "full_paper_methods_retrieved": false,
+  "source_checks": {
+    "src/SlimUNETR/SlimUNETR.py": {
+      "local_sha256": "a0e349105194e2789a2684a70915ca27d3b62f8b2116dcc30abb2d906f91f3f9",
+      "upstream_sha256": "a0e349105194e2789a2684a70915ca27d3b62f8b2116dcc30abb2d906f91f3f9",
+      "bytes_identical": true,
+      "normalized_text_identical": true
+    },
+    "src/SlimUNETR/Encoder.py": {
+      "local_sha256": "5d23f16902b6f0defb3a1d41eba4675ecacc36a64e828531c8c62dc23e43ec17",
+      "upstream_sha256": "5d23f16902b6f0defb3a1d41eba4675ecacc36a64e828531c8c62dc23e43ec17",
+      "bytes_identical": true,
+      "normalized_text_identical": true
+    },
+    "src/SlimUNETR/Decoder.py": {
+      "local_sha256": "0ee5c5f7a34407fa7d33ebdf51b8cc44ee738a4119295a6ae4e74a5fef6949dc",
+      "upstream_sha256": "0ee5c5f7a34407fa7d33ebdf51b8cc44ee738a4119295a6ae4e74a5fef6949dc",
+      "bytes_identical": true,
+      "normalized_text_identical": true
+    },
+    "src/SlimUNETR/Slim_UNETR_Block.py": {
+      "local_sha256": "0d126789cd6aeadf55ae09d0a817cbc409b034ea385acb6954d3d0237209eb88",
+      "upstream_sha256": "0d126789cd6aeadf55ae09d0a817cbc409b034ea385acb6954d3d0237209eb88",
+      "bytes_identical": true,
+      "normalized_text_identical": true
+    },
+    "src/loader.py": {
+      "local_sha256": "6e5bf19f0e0f305e416de7eed03d2523de92c11be175ad0afbda60d4877248c3",
+      "upstream_sha256": "2288abdfc31ddfae154ce96838b74cabb6b74beae0be31cee7191cafda8f993e",
+      "bytes_identical": false,
+      "normalized_text_identical": false
+    },
+    "inference.py": {
+      "local_sha256": "db3fdcf860ad77d30ab91db1bb354e36ff225a5edd78f4bc6066fc7691ecf337",
+      "upstream_sha256": "0e0580e79a070a0002396702e87e152d3dcada198a53fdbeb62a1918e92669cd",
+      "bytes_identical": false,
+      "normalized_text_identical": false
+    },
+    "config.yml": {
+      "local_sha256": "1925ac27c3da52447fb3a1bfa0e799939cfe6771c11f8fb4e92f390a8d420167",
+      "upstream_sha256": "7e6de85b32002a80e5757c9b32aafed55228a9d01a7931a4fa17869bd5f9fb3a",
+      "bytes_identical": false,
+      "normalized_text_identical": false
+    },
+    "figures/table1.jpg": {
+      "local_sha256": "f8f9590df3658c0755b565495fac16e25369e224e008f467e172f791086f55c2",
+      "upstream_sha256": "f8f9590df3658c0755b565495fac16e25369e224e008f467e172f791086f55c2",
+      "bytes_identical": true
+    },
+    "figures/table2.jpg": {
+      "local_sha256": "7a5b46e1445b1cb01946193ecaa2116ce38a2e694d5f7d71e5ba83719e7f377c",
+      "upstream_sha256": "7a5b46e1445b1cb01946193ecaa2116ce38a2e694d5f7d71e5ba83719e7f377c",
+      "bytes_identical": true
+    },
+    "figures/table3.jpg": {
+      "local_sha256": "5814aa738c8d90c9703c34a462ebc8f9b86daed6fb6b63457f91ed379136da9f",
+      "upstream_sha256": "5814aa738c8d90c9703c34a462ebc8f9b86daed6fb6b63457f91ed379136da9f",
+      "bytes_identical": true
+    }
+  },
+  "checkpoint": {
+    "local_sha256": "8adbc8ce26c67a6783da8aea03edb95f530c16b4416185501a2711472677d5f4",
+    "fresh_release_sha256": "8adbc8ce26c67a6783da8aea03edb95f530c16b4416185501a2711472677d5f4",
+    "fresh_download_identical": true,
+    "publisher_signed_checksum_available": false,
+    "strict_cpu_weight_loading_passed": true,
+    "parameters": 1783425,
+    "unchanged_after_loading": true
+  },
+  "paper_brats2021": {
+    "WT": 93.77,
+    "ET": 89.36,
+    "TC": 94.19,
+    "overall": 92.44,
+    "hd95_mm": {
+      "WT": 7.34,
+      "ET": 4.5,
+      "TC": 4.24,
+      "overall": 5.36
+    }
+  },
+  "paper_msd_task01": {
+    "WT": 89.38,
+    "ET": 65.7,
+    "TC": 85.73,
+    "overall": 80.27
+  },
+  "local_97_case_recomputed_metrics": {
+    "TC": {
+      "dice_percent": 81.30341398139535,
+      "defined_dice_cases": 97,
+      "hd95_mm": 23.446139349150904,
+      "finite_only_hd95_mm": 23.446139349150904,
+      "infinite_hd95_cases": 0,
+      "difference_from_paper_msd_percentage_points": -4.426586018604652
+    },
+    "WT": {
+      "dice_percent": 85.37202782943271,
+      "defined_dice_cases": 97,
+      "hd95_mm": 34.85527372237333,
+      "finite_only_hd95_mm": 34.85527372237333,
+      "infinite_hd95_cases": 0,
+      "difference_from_paper_msd_percentage_points": -4.007972170567285
+    },
+    "ET": {
+      "dice_percent": 75.0573417881655,
+      "defined_dice_cases": 95,
+      "hd95_mm": "Infinity",
+      "finite_only_hd95_mm": 20.187197364004035,
+      "infinite_hd95_cases": 2,
+      "difference_from_paper_msd_percentage_points": 9.357341788165499
+    },
+    "overall": {
+      "dice_percent": 80.57759453299785,
+      "difference_from_paper_msd_percentage_points": 0.3075945329978538
+    }
+  },
+  "local_dataset_labels": {
+    "0": "background",
+    "1": "edema",
+    "2": "non-enhancing tumor",
+    "3": "enhancing tumour"
+  },
+  "local_dataset_modality": {
+    "0": "FLAIR",
+    "1": "T1w",
+    "2": "t1gd",
+    "3": "T2w"
+  },
+  "notable_protocol_differences": [
+    "Local 97 MSD Task01 cases use released BraTS2021 weights, not a verified Task01 checkpoint.",
+    "Exact paper evaluation cases and released-checkpoint training membership are unverified.",
+    "Upstream MSD ET conversion uses label 2; local ET conversion uses label 3, matching local dataset manifest.",
+    "Original inference.py calls optimizer warm_up; local frozen runner does not update weights. Paper-time use of this code is unconfirmed.",
+    "Local HD95 empty-mask and aggregation policy is explicit; agreement with paper scoring policy is unconfirmed.",
+    "JPG/PNG uses a separate BRISC SegFormer model; its slice metrics do not reproduce Slim UNETR."
+  ],
+  "two_d_scope": {
+    "model": "BRISC SegFormer-B5 \u00b7 2D binary tumour segmentation",
+    "annotated_slice_count": 18,
+    "mean_dice_percent": 75.2510057490068,
+    "comparable_to_slim_unetr_paper": false
+  },
+  "no_inference_or_training_performed_in_this_audit": true,
+  "limitations": "This audit recalculates saved metric records and checks files/strict loading. It does not recompute every voxel-level metric or establish independence from checkpoint training. Full paper/supplement not accessible through inspected publisher/author links."
+}

@@ -1,0 +1,9 @@
+{
+  "device": "cpu",
+  "source": "brisc2025/segmentation_task/test/images/brisc2025_test_00001_gl_ax_t1.jpg",
+  "mask_pixel_agreement_with_cuda": 1.0,
+  "different_pixels": 0,
+  "inference_seconds": 13.329308299988043,
+  "total_processing_seconds": 20.395180999999866,
+  "model_state_unchanged": true
+}

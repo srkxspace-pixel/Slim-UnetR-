@@ -1,0 +1,12 @@
+--- upstream/src/loader.py
++++ local/src/loader.py
+@@ -41,7 +41,8 @@
+             result = [
+                 (img == 2) | (img == 3),
+                 (img == 1) | (img == 2) | (img == 3),
+-                (img == 2),
++                # MSD Task01: 1 edema, 2 non-enhancing, 3 enhancing (verified: label 3 is bright on T1gd)
++                (img == 3),
+             ]
+         else:
+             # TC WT ET

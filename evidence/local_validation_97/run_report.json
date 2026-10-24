@@ -1,0 +1,4857 @@
+{
+  "evaluation_label": "OUR LOCAL MSD TASK01 VALIDATION EVALUATION \u2014 NOT REPRODUCED PAPER RESULTS",
+  "started_utc": "2026-10-17T22:27:01.501063+00:00",
+  "official_release": "https://github.com/deepang-ai/Slim-UNETR/releases/tag/v1.0.0",
+  "checkpoint": "D:\\SRM Projects\\Slim-UNETR-main\\model_store\\official_brats2021\\brats21_pytorch_model.bin",
+  "checkpoint_sha256": "8adbc8ce26c67a6783da8aea03edb95f530c16b4416185501a2711472677d5f4",
+  "checkpoint_training_dataset": "BraTS 2021 (per authors' release)",
+  "evaluation_dataset": "D:\\SRM Projects\\datasets\\Task01_BrainTumour",
+  "limitation": "Cross-dataset demonstration; training/test patient overlap with BraTS 2021 is not verified. Not an independent benchmark or paper reproduction.",
+  "split": {
+    "method": "existing manifest order and configured train_ratio",
+    "validation_start_index": 387,
+    "total_labelled_cases": 484,
+    "requested_cases": 97,
+    "dataset_manifest_sha256": "77f38db2fcf1a39ad4923f482f30c948cc7349fa7823cd307ceb3145adb81412",
+    "case_ids": [
+      "BRATS_409",
+      "BRATS_258",
+      "BRATS_346",
+      "BRATS_417",
+      "BRATS_246",
+      "BRATS_237",
+      "BRATS_080",
+      "BRATS_466",
+      "BRATS_337",
+      "BRATS_180",
+      "BRATS_229",
+      "BRATS_478",
+      "BRATS_329",
+      "BRATS_254",
+      "BRATS_405",
+      "BRATS_354",
+      "BRATS_283",
+      "BRATS_034",
+      "BRATS_383",
+      "BRATS_134",
+      "BRATS_049",
+      "BRATS_149",
+      "BRATS_057",
+      "BRATS_157",
+      "BRATS_126",
+      "BRATS_391",
+      "BRATS_026",
+      "BRATS_291",
+      "BRATS_138",
+      "BRATS_038",
+      "BRATS_145",
+      "BRATS_045",
+      "BRATS_110",
+      "BRATS_010",
+      "BRATS_173",
+      "BRATS_073",
+      "BRATS_002",
+      "BRATS_102",
+      "BRATS_061",
+      "BRATS_161",
+      "BRATS_147",
+      "BRATS_047",
+      "BRATS_124",
+      "BRATS_393",
+      "BRATS_024",
+      "BRATS_293",
+      "BRATS_159",
+      "BRATS_059",
+      "BRATS_028",
+      "BRATS_128",
+      "BRATS_055",
+      "BRATS_155",
+      "BRATS_281",
+      "BRATS_036",
+      "BRATS_381",
+      "BRATS_136",
+      "BRATS_063",
+      "BRATS_163",
+      "BRATS_100",
+      "BRATS_171",
+      "BRATS_071",
+      "BRATS_112",
+      "BRATS_012",
+      "BRATS_423",
+      "BRATS_372",
+      "BRATS_272",
+      "BRATS_440",
+      "BRATS_311",
+      "BRATS_211",
+      "BRATS_260",
+      "BRATS_360",
+      "BRATS_431",
+      "BRATS_203",
+      "BRATS_303",
+      "BRATS_452",
+      "BRATS_256",
+      "BRATS_407",
+      "BRATS_356",
+      "BRATS_235",
+      "BRATS_082",
+      "BRATS_464",
+      "BRATS_335",
+      "BRATS_182",
+      "BRATS_248",
+      "BRATS_419",
+      "BRATS_348",
+      "BRATS_339",
+      "BRATS_468",
+      "BRATS_239",
+      "BRATS_344",
+      "BRATS_415",
+      "BRATS_244",
+      "BRATS_190",
+      "BRATS_327",
+      "BRATS_476",
+      "BRATS_090",
+      "BRATS_227"
+    ]
+  },
+  "device": "cuda",
+  "gpu": "NVIDIA GeForce GTX 1650",
+  "versions": {
+    "python": "3.11.9",
+    "torch": "2.5.1+cu121",
+    "monai": "1.2.0",
+    "numpy": "1.26.4",
+    "scipy": "1.14.1"
+  },
+  "inference": {
+    "roi": [
+      128,
+      128,
+      128
+    ],
+    "overlap": 0.5,
+    "threshold": 0.5,
+    "training": false,
+    "synthetic_inputs": false
+  },
+  "metric_policy": {
+    "dice": "Per-case per-region Dice; empty ground-truth regions are undefined/excluded, matching MONAI ignore_empty=True. Nonempty GT and empty prediction scores zero.",
+    "hd95": "MONAI symmetric Euclidean HD95: maximum of the two directed 95th-percentile surface distances, using physical voxel spacing in mm.",
+    "empty_hd95": "Both masks empty: undefined/excluded. Exactly one empty: Infinity retained in primary mean. Finite-only means are separate and exclude these failures."
+  },
+  "regions": [
+    "TC",
+    "WT",
+    "ET"
+  ],
+  "nifti_space": "Preprocessed RAS orientation and 1 mm spacing; region volume last axis is TC, WT, ET",
+  "cases": [
+    {
+      "case": "BRATS_409",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_409.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_409.nii.gz",
+      "image_sha256": "74a4d182237e887ba5ec58b5fc4762c3b7913388d3122d1285525aacf9eeead2",
+      "label_sha256": "a4c0573207472dc2a9cd334d36aee31dd555a28de5ad301bbcdaeac89ecf021e",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9632935907522847,
+        "WT": 0.9651412129098473,
+        "ET": 0.9497055572967356
+      },
+      "hd95_mm": {
+        "TC": 1.4142135381698608,
+        "WT": 1.7320507764816284,
+        "ET": 1.4142135381698608
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 32983,
+        "WT": 159632,
+        "ET": 30477
+      },
+      "prediction_voxels": {
+        "TC": 33109,
+        "WT": 167746,
+        "ET": 30146
+      },
+      "inference_seconds": 10.940325499999744,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": 90,
+      "png": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_409.png",
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_409_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_258",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_258.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_258.nii.gz",
+      "image_sha256": "e9b1e64c4a44888a95ff3be871379433d8c603f043d70f3b7664d42d0ed4640b",
+      "label_sha256": "28bebfa055a320c887e5e2caa1f1a7daf8f1e1078b314f3dca56b8ad7cc67e40",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9004140469253182,
+        "WT": 0.871396367501787,
+        "ET": 0.9186766413001419
+      },
+      "hd95_mm": {
+        "TC": 3.7416574954986572,
+        "WT": 35.53730010986328,
+        "ET": 3.1622776985168457
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 16957,
+        "WT": 55492,
+        "ET": 15488
+      },
+      "prediction_voxels": {
+        "TC": 15648,
+        "WT": 53634,
+        "ET": 15524
+      },
+      "inference_seconds": 1.9693847000007736,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": 64,
+      "png": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_258.png",
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_258_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_346",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_346.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_346.nii.gz",
+      "image_sha256": "12818670905fb3a284dd6f831bfcdfa99c08536cf35c165797b25d48589b1122",
+      "label_sha256": "2db3f084dbaa5b6728d03dd40c045cb0605475c1e6e13a93f26ce6d9b3211b39",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9265503419004951,
+        "WT": 0.8338597128669517,
+        "ET": 0.8335477003592495
+      },
+      "hd95_mm": {
+        "TC": 56.671852111816406,
+        "WT": 60.87692642211914,
+        "ET": 40.468505859375
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 16886,
+        "WT": 45951,
+        "ET": 10897
+      },
+      "prediction_voxels": {
+        "TC": 17042,
+        "WT": 61386,
+        "ET": 11650
+      },
+      "inference_seconds": 2.04480120000062,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": 100,
+      "png": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_346.png",
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_346_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_417",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_417.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_417.nii.gz",
+      "image_sha256": "2e52b977d40c0a157360ee3bb8d0afdee41fd36caaba97ddeb53c4dcbd2e2d48",
+      "label_sha256": "ee4790494487afba7fd1466ed504a66a0b88b8893b3379943f7aef4014d67917",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9154690291297531,
+        "WT": 0.9396016030523062,
+        "ET": 0.8386998213782081
+      },
+      "hd95_mm": {
+        "TC": 4.4721360206604,
+        "WT": 3.0,
+        "ET": 3.316624879837036
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 67394,
+        "WT": 166140,
+        "ET": 36506
+      },
+      "prediction_voxels": {
+        "TC": 69751,
+        "WT": 171965,
+        "ET": 48590
+      },
+      "inference_seconds": 1.966972700000042,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_417_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_246",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_246.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_246.nii.gz",
+      "image_sha256": "02aa12425668a8d812610401e503a239913ef67b235beb3b33b4a61a1c6d3c40",
+      "label_sha256": "1e41f4eafa4174f1f3633c128a3490f3513effe943a5ebaa4344f71a8d527841",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.6316171041149224,
+        "WT": 0.8081082692422346,
+        "ET": 0.6478625232334431
+      },
+      "hd95_mm": {
+        "TC": 14.899664878845215,
+        "WT": 12.083045959472656,
+        "ET": 12.688577651977539
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 30980,
+        "WT": 81393,
+        "ET": 11012
+      },
+      "prediction_voxels": {
+        "TC": 43505,
+        "WT": 86337,
+        "ET": 19655
+      },
+      "inference_seconds": 1.9703111999997418,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_246_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_237",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_237.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_237.nii.gz",
+      "image_sha256": "8bef33d764cc90081a7107739b20fa6632f9a99c8bef2ee01dc895e71d281968",
+      "label_sha256": "f9ce617f08026ff381f6aa8f1f2c7cf4944eb0ee5574bb4b421cfa5d30c0b155",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8812088190572732,
+        "WT": 0.7735494487304735,
+        "ET": 0.8804494448644402
+      },
+      "hd95_mm": {
+        "TC": 92.98387145996094,
+        "WT": 75.66372680664062,
+        "ET": 2.0
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 56643,
+        "WT": 122592,
+        "ET": 31160
+      },
+      "prediction_voxels": {
+        "TC": 69629,
+        "WT": 185515,
+        "ET": 36301
+      },
+      "inference_seconds": 1.8283311000004687,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_237_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_080",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_080.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_080.nii.gz",
+      "image_sha256": "e4f5d6d3a07fdcaca38bb67c840fc04a74ada3dfbcc93fb66fd6c1645b10cc66",
+      "label_sha256": "42311f79d971730ae83aac5be4148f1a3e6c8738852912db897000bb75c22297",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.7588563554943162,
+        "WT": 0.9120808221881499,
+        "ET": 0.8245649489165825
+      },
+      "hd95_mm": {
+        "TC": 7.681145668029785,
+        "WT": 6.7082037925720215,
+        "ET": 1.4142135381698608
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 55989,
+        "WT": 124006,
+        "ET": 20704
+      },
+      "prediction_voxels": {
+        "TC": 89161,
+        "WT": 139486,
+        "ET": 23831
+      },
+      "inference_seconds": 2.1980603000001793,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_080_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_466",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_466.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_466.nii.gz",
+      "image_sha256": "261eda8a18b5e4ac05aeeac6af645bc51c8d2391caa87a29d5fbca3c3295abba",
+      "label_sha256": "06a12278cf4be3e59027197d0e2ed0af82f35dd414fea63bc0f7d74d446ac7a3",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.7095136290753608,
+        "WT": 0.8013165769000599,
+        "ET": 0.7230769230769231
+      },
+      "hd95_mm": {
+        "TC": 85.18802642822266,
+        "WT": 90.49723815917969,
+        "ET": 85.0482177734375
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 2702,
+        "WT": 16748,
+        "ET": 2642
+      },
+      "prediction_voxels": {
+        "TC": 4782,
+        "WT": 23356,
+        "ET": 4508
+      },
+      "inference_seconds": 2.2227770000008604,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_466_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_337",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_337.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_337.nii.gz",
+      "image_sha256": "a5b2697b96ce93fc1154c3d37545b1fdcb4082da431e4789f9fe55ead47fce92",
+      "label_sha256": "83232d8d689e1b1065bb4afcc0a0bc5720dacfccdfc332704efbb0b04ed58b83",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8345423579133288,
+        "WT": 0.6623014573846444,
+        "ET": 0.5742515853119009
+      },
+      "hd95_mm": {
+        "TC": 48.41280746459961,
+        "WT": 50.72474670410156,
+        "ET": 48.71652603149414
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 7706,
+        "WT": 37429,
+        "ET": 2624
+      },
+      "prediction_voxels": {
+        "TC": 8147,
+        "WT": 63368,
+        "ET": 4157
+      },
+      "inference_seconds": 2.2572883999991973,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_337_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_180",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_180.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_180.nii.gz",
+      "image_sha256": "236c9935bce894295ca99d2d291f7da684e14e58e58473f38d8341ba0ab30800",
+      "label_sha256": "f12b36d7437151f52191d5122f4b7e7abb3254f149a384b8552b1b7046683ab6",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8598587949210384,
+        "WT": 0.8882766590098786,
+        "ET": 0.8179269090569212
+      },
+      "hd95_mm": {
+        "TC": 5.4772257804870605,
+        "WT": 27.358726501464844,
+        "ET": 3.605551242828369
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 33692,
+        "WT": 72691,
+        "ET": 17816
+      },
+      "prediction_voxels": {
+        "TC": 38685,
+        "WT": 69231,
+        "ET": 24980
+      },
+      "inference_seconds": 2.263031899999987,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_180_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_229",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_229.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_229.nii.gz",
+      "image_sha256": "40d9f7c21435bcdb725e726487f96fc85f298d01bce01aa589ba1cfcb9c9eaf9",
+      "label_sha256": "7ec0edcdb04287d5156256e2e2cabce40c0d1af9b079590826f6b2530abe98a0",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9404787879805083,
+        "WT": 0.9210811621462025,
+        "ET": 0.8912732335673323
+      },
+      "hd95_mm": {
+        "TC": 5.099019527435303,
+        "WT": 7.880307674407959,
+        "ET": 1.7320507764816284
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 89654,
+        "WT": 166825,
+        "ET": 48023
+      },
+      "prediction_voxels": {
+        "TC": 89089,
+        "WT": 153238,
+        "ET": 54684
+      },
+      "inference_seconds": 2.22079980000035,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_229_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_478",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_478.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_478.nii.gz",
+      "image_sha256": "8f57ee5a7ede5edb4cc2b40d9bbbf6b841501d2b3271dff0bc92ad3c69f9d6f8",
+      "label_sha256": "fed0df71b5a0a9eb3b40e0a8b050206642ae7951d4a182968df368d6f363a5a1",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8946831569552467,
+        "WT": 0.8548943374929454,
+        "ET": 0.8183104954073182
+      },
+      "hd95_mm": {
+        "TC": 91.0054931640625,
+        "WT": 62.617889404296875,
+        "ET": 89.51478576660156
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 21485,
+        "WT": 77278,
+        "ET": 14157
+      },
+      "prediction_voxels": {
+        "TC": 25573,
+        "WT": 82192,
+        "ET": 19048
+      },
+      "inference_seconds": 2.182003899999472,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_478_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_329",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_329.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_329.nii.gz",
+      "image_sha256": "bb89c0d6ab04e5236acd76270d0975a55a250b7e6a7ba9d3d3caf9a534e5470c",
+      "label_sha256": "f67ac16fb1aeb24d3e1f4b189561d79cd252ceead7767392e5f4edbcbc1196b9",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8740400033758123,
+        "WT": 0.8572210848584034,
+        "ET": 0.7700266184521118
+      },
+      "hd95_mm": {
+        "TC": 4.123105525970459,
+        "WT": 36.67219543457031,
+        "ET": 2.2360680103302
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 48208,
+        "WT": 78815,
+        "ET": 24262
+      },
+      "prediction_voxels": {
+        "TC": 46584,
+        "WT": 81888,
+        "ET": 35471
+      },
+      "inference_seconds": 2.211568400000033,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_329_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_254",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_254.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_254.nii.gz",
+      "image_sha256": "a67d7e3c02b42960ee53272895c4c5fb06db2f188c254211a2b337ff9876465d",
+      "label_sha256": "f9942c527a51efc6e4f82ee9bc3b95fc178f933bd247fb0509dd4922d498a197",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.7286500506072875,
+        "WT": 0.7625197267766146,
+        "ET": 0.3674911660777385
+      },
+      "hd95_mm": {
+        "TC": 71.4709701538086,
+        "WT": 33.18132019042969,
+        "ET": 15.924598693847656
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 24911,
+        "WT": 75105,
+        "ET": 79
+      },
+      "prediction_voxels": {
+        "TC": 38321,
+        "WT": 90913,
+        "ET": 204
+      },
+      "inference_seconds": 2.1890456000000995,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_254_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_405",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_405.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_405.nii.gz",
+      "image_sha256": "7097f81a4a8bfbd209d9bf18b06bad1dd56e7b8259e8cecc825cf2655e6153c2",
+      "label_sha256": "2e2bbfd5bf0cb9a5b50b957d44665e05660cc7e7378bc6694d91aaf1c76f10a0",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8988301774561317,
+        "WT": 0.826248369510686,
+        "ET": 0.8213975612518404
+      },
+      "hd95_mm": {
+        "TC": 82.47544860839844,
+        "WT": 84.79386901855469,
+        "ET": 81.18990325927734
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 19701,
+        "WT": 53787,
+        "ET": 12114
+      },
+      "prediction_voxels": {
+        "TC": 20647,
+        "WT": 65809,
+        "ET": 14375
+      },
+      "inference_seconds": 2.212384800000109,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_405_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_354",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_354.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_354.nii.gz",
+      "image_sha256": "eca0a7537617ed4616f168d186181c5c70c97600ca0af9f4d034f3402e6b95cf",
+      "label_sha256": "32111032b765e80b8108b631ee43656c28f216b225f5c08b20e35d679160c23b",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9541570422435416,
+        "WT": 0.9303672532084457,
+        "ET": 0.8295723062381852
+      },
+      "hd95_mm": {
+        "TC": 1.4142135381698608,
+        "WT": 3.464101552963257,
+        "ET": 1.4142135381698608
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 34530,
+        "WT": 87324,
+        "ET": 16172
+      },
+      "prediction_voxels": {
+        "TC": 36037,
+        "WT": 89475,
+        "ET": 17684
+      },
+      "inference_seconds": 2.1148315999998886,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_354_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_283",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_283.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_283.nii.gz",
+      "image_sha256": "af51d2447ecc7a1e4bd4b3db620f89a2dc3da6bc4850588ad82d1a5e41fced57",
+      "label_sha256": "c80744cee06dce19916f407c9a174495adab8e35d1e72b15cf1cb0ed7a0ef0f6",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8853058293622299,
+        "WT": 0.9379241512375844,
+        "ET": 0.8461602324616023
+      },
+      "hd95_mm": {
+        "TC": 6.4031243324279785,
+        "WT": 3.0,
+        "ET": 14.582514762878418
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 107445,
+        "WT": 217380,
+        "ET": 43379
+      },
+      "prediction_voxels": {
+        "TC": 122340,
+        "WT": 217459,
+        "ET": 52981
+      },
+      "inference_seconds": 2.238470100000086,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_283_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_034",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_034.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_034.nii.gz",
+      "image_sha256": "b0843093f875aa84697d642928e35f221765e06002542e345bedb0f9493259c9",
+      "label_sha256": "60b7361868f427fdf57da5039cb17d45baa514b27f617a29766de83402cb7417",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.7568046506099604,
+        "WT": 0.95605488818727,
+        "ET": 0.007177033492822967
+      },
+      "hd95_mm": {
+        "TC": 9.643651008605957,
+        "WT": 3.464101552963257,
+        "ET": 41.11568069458008
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 110750,
+        "WT": 216140,
+        "ET": 822
+      },
+      "prediction_voxels": {
+        "TC": 74344,
+        "WT": 212076,
+        "ET": 14
+      },
+      "inference_seconds": 2.0898332999995546,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_034_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_383",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_383.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_383.nii.gz",
+      "image_sha256": "38eccd744f44aeb39182a0f3e0f715ce3a16c169507a35af6523c7a0ca292e78",
+      "label_sha256": "f532f71659d007c2e29d15cc6d7691c16b6331cad203f548115eaec0572cb3b0",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9543086101390864,
+        "WT": 0.8784983462530398,
+        "ET": 0.8878428053843916
+      },
+      "hd95_mm": {
+        "TC": 85.27484893798828,
+        "WT": 82.20097351074219,
+        "ET": 2.2360680103302
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 84354,
+        "WT": 138051,
+        "ET": 52126
+      },
+      "prediction_voxels": {
+        "TC": 85109,
+        "WT": 133756,
+        "ET": 61313
+      },
+      "inference_seconds": 2.1617538000000422,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_383_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_134",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_134.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_134.nii.gz",
+      "image_sha256": "9e5dbafa2ea401c612f99f5c201e9ba66316535d19205a76ad00de06c8eb1368",
+      "label_sha256": "7182f664bda6b8c1cc28e5e059f892ebad52dc309ca9c6f304664f777c235cc3",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.7271613759314076,
+        "WT": 0.7116537331680562,
+        "ET": 0.19430740037950664
+      },
+      "hd95_mm": {
+        "TC": 61.85062789916992,
+        "WT": 57.19702911376953,
+        "ET": 65.73697662353516
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 8138,
+        "WT": 59141,
+        "ET": 408
+      },
+      "prediction_voxels": {
+        "TC": 11456,
+        "WT": 58641,
+        "ET": 2227
+      },
+      "inference_seconds": 2.2271092000000863,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_134_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_049",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_049.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_049.nii.gz",
+      "image_sha256": "7215cdb9c28249b86a339270f3d197c86bbb0590a78b126115a6337773074e16",
+      "label_sha256": "99f3de4ed6fad8542975821d1a62ff9cf1606c77e3cfdc0a87381230efc51e66",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9604782857481108,
+        "WT": 0.8231918266282527,
+        "ET": 0.9376794722545596
+      },
+      "hd95_mm": {
+        "TC": 1.4142135381698608,
+        "WT": 43.32435989379883,
+        "ET": 1.4142135381698608
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 50682,
+        "WT": 80312,
+        "ET": 43633
+      },
+      "prediction_voxels": {
+        "TC": 50680,
+        "WT": 92542,
+        "ET": 46562
+      },
+      "inference_seconds": 2.0503607000000557,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_049_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_149",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_149.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_149.nii.gz",
+      "image_sha256": "1ad6c71552e654cc2745b5c1134396547f16b842c394a8ed5ef73f864b72cf33",
+      "label_sha256": "e10e0d7047dfefe2bef9df0072d3dbaea2186375aeab31543fb38a784c8eabfb",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.408838657282079,
+        "WT": 0.9037740213817148,
+        "ET": 0.19201616978271854
+      },
+      "hd95_mm": {
+        "TC": 10.049875259399414,
+        "WT": 3.7416574954986572,
+        "ET": 12.688577651977539
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 19465,
+        "WT": 124962,
+        "ET": 445
+      },
+      "prediction_voxels": {
+        "TC": 10087,
+        "WT": 117114,
+        "ET": 3513
+      },
+      "inference_seconds": 2.3807719999995243,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_149_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_057",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_057.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_057.nii.gz",
+      "image_sha256": "8f846ce53e5c7aef76704508b693b9bb9d62ceee1953cec00ad6d3893a28072d",
+      "label_sha256": "15fc18960aa124d2e30d4436e26ed9e015812b8ab0c834080dbf2eb54ecdbd25",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8843779622222736,
+        "WT": 0.8783226430389829,
+        "ET": 0.9072199920845819
+      },
+      "hd95_mm": {
+        "TC": 4.358899116516113,
+        "WT": 9.0,
+        "ET": 2.2360680103302
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 23048,
+        "WT": 141655,
+        "ET": 16444
+      },
+      "prediction_voxels": {
+        "TC": 20205,
+        "WT": 139597,
+        "ET": 18930
+      },
+      "inference_seconds": 2.0807740999998714,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_057_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_157",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_157.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_157.nii.gz",
+      "image_sha256": "f5722bc4cd537b1394710396cb0b9636d2f2265bfadb640b44c72b4d193a74ba",
+      "label_sha256": "60edca71788a99b259316ac9d2454155c394bdb301c1430c7c2f8871180fa3be",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.6134893476101115,
+        "WT": 0.8692016376959831,
+        "ET": 0.7827762543541096
+      },
+      "hd95_mm": {
+        "TC": 20.2237491607666,
+        "WT": 4.4721360206604,
+        "ET": 20.2237491607666
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 28260,
+        "WT": 176753,
+        "ET": 13087
+      },
+      "prediction_voxels": {
+        "TC": 17035,
+        "WT": 168366,
+        "ET": 13899
+      },
+      "inference_seconds": 2.2885520999998334,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_157_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_126",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_126.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_126.nii.gz",
+      "image_sha256": "aa3bcbb44dab184adb805606d92a3f78b1932596e6e89857c7815ee2c3efe492",
+      "label_sha256": "2f9589c813fd974f6750a6639d449abc25c44ba9c466977bbeeb6d76d3e3604a",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.30259347909887135,
+        "WT": 0.8025386824793848,
+        "ET": 0.7138680033416875
+      },
+      "hd95_mm": {
+        "TC": 18.788293838500977,
+        "WT": 12.369317054748535,
+        "ET": 31.064449310302734
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 23592,
+        "WT": 134351,
+        "ET": 4076
+      },
+      "prediction_voxels": {
+        "TC": 87957,
+        "WT": 189439,
+        "ET": 5500
+      },
+      "inference_seconds": 2.0637143999992986,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_126_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_391",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_391.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_391.nii.gz",
+      "image_sha256": "d56bd4318057a48d6b622b9b32647b99e6ec2883850a6c0b6b7deb321f4ca6f1",
+      "label_sha256": "8727737651bc4fc93b937a20d06d5fd29e698cf62113f4a9ad22ebb876114bdc",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9430601558527233,
+        "WT": 0.9490123377118619,
+        "ET": 0.9169223063920365
+      },
+      "hd95_mm": {
+        "TC": 3.0,
+        "WT": 3.1622776985168457,
+        "ET": 2.0
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 37146,
+        "WT": 81847,
+        "ET": 33532
+      },
+      "prediction_voxels": {
+        "TC": 35615,
+        "WT": 88606,
+        "ET": 30360
+      },
+      "inference_seconds": 2.200613400000293,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_391_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_026",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_026.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_026.nii.gz",
+      "image_sha256": "608a64606636a9232a4ab0bbbad3859bcad47628ca061ee55aa9a217a41c98d6",
+      "label_sha256": "383281f899cfaddd4047c309c75e9d48138561104a2c8336909058ff98b1cf50",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9507890814341142,
+        "WT": 0.8782227219932974,
+        "ET": null
+      },
+      "hd95_mm": {
+        "TC": 1.4142135381698608,
+        "WT": 36.27671432495117,
+        "ET": "Infinity"
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "one_empty_infinite"
+      },
+      "ground_truth_voxels": {
+        "TC": 43406,
+        "WT": 61746,
+        "ET": 0
+      },
+      "prediction_voxels": {
+        "TC": 44481,
+        "WT": 73427,
+        "ET": 41
+      },
+      "inference_seconds": 2.2202039000003424,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_026_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_291",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_291.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_291.nii.gz",
+      "image_sha256": "b03886e49e0157ce356a094e1f92e1c42867055db0fb18f03fc7781c35de0815",
+      "label_sha256": "4823ae17173d2bfa5e276ade157caace5e40247fd28478ad5591c4ffebdf4795",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.950338871228933,
+        "WT": 0.7955602143811182,
+        "ET": 0.8731061015410552
+      },
+      "hd95_mm": {
+        "TC": 1.4142135381698608,
+        "WT": 51.195701599121094,
+        "ET": 1.4142135381698608
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 33617,
+        "WT": 100886,
+        "ET": 23187
+      },
+      "prediction_voxels": {
+        "TC": 33075,
+        "WT": 135702,
+        "ET": 23080
+      },
+      "inference_seconds": 2.12896660000024,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_291_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_138",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_138.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_138.nii.gz",
+      "image_sha256": "4d334b659ad7199bc585c5a0d80386eb0dcc0937bf0673f6dd7e3479400b30d3",
+      "label_sha256": "d006a96fb8785158deab2d5bc985b2cd7fff1146ed2dc9e452c82490aee11a7c",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.07237250220877117,
+        "WT": 0.32210523410655884,
+        "ET": 0.2725134873426477
+      },
+      "hd95_mm": {
+        "TC": 35.0142822265625,
+        "WT": 25.075881958007812,
+        "ET": 34.89985656738281
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 2025,
+        "WT": 12771,
+        "ET": 994
+      },
+      "prediction_voxels": {
+        "TC": 51172,
+        "WT": 59696,
+        "ET": 6235
+      },
+      "inference_seconds": 2.250270200000159,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_138_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_038",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_038.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_038.nii.gz",
+      "image_sha256": "31e49032920db4d8510c4278bbedb0a8916b9972b7141fcd851360ef29772568",
+      "label_sha256": "e7103516b458dab3fef87e6a17c10e95d0d4dc0d800ef049c656b18db5fac7bd",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9393144701953048,
+        "WT": 0.9425346869490558,
+        "ET": 0.9032009648760213
+      },
+      "hd95_mm": {
+        "TC": 2.2360680103302,
+        "WT": 3.7416574954986572,
+        "ET": 2.2360680103302
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 103216,
+        "WT": 150934,
+        "ET": 81453
+      },
+      "prediction_voxels": {
+        "TC": 103077,
+        "WT": 154224,
+        "ET": 95150
+      },
+      "inference_seconds": 2.228572400000303,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_038_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_145",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_145.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_145.nii.gz",
+      "image_sha256": "2e5bdee354aa06528afbbc1f98a306208d2877745e6851db34e0243f2d8e8578",
+      "label_sha256": "63a588b54a02756675754fb9fb7b8be1996a72cb9bec28f8853192dca5f5ba4f",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9628117884071475,
+        "WT": 0.9224545986007129,
+        "ET": 0.9011058725146704
+      },
+      "hd95_mm": {
+        "TC": 2.0,
+        "WT": 57.21887969970703,
+        "ET": 1.0
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 75478,
+        "WT": 102055,
+        "ET": 33150
+      },
+      "prediction_voxels": {
+        "TC": 76909,
+        "WT": 110053,
+        "ET": 36207
+      },
+      "inference_seconds": 2.1142712000000756,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_145_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_045",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_045.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_045.nii.gz",
+      "image_sha256": "3347f8e1a08c1ae360ec9c4d5ffd66ea56925390aae581b58495cc00f98f5cd7",
+      "label_sha256": "5769d859e9203a4a73378ee369ed6c46425feee0e60b777a1c6460a95bb0cd1b",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8489509115031202,
+        "WT": 0.9519415779930466,
+        "ET": 0.9007705779334501
+      },
+      "hd95_mm": {
+        "TC": 8.9442720413208,
+        "WT": 3.605551242828369,
+        "ET": 2.0
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 45786,
+        "WT": 91735,
+        "ET": 26737
+      },
+      "prediction_voxels": {
+        "TC": 35618,
+        "WT": 88608,
+        "ET": 30363
+      },
+      "inference_seconds": 2.239602000000559,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_045_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_110",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_110.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_110.nii.gz",
+      "image_sha256": "55c138d74dafa598110660e7d4d04fefa666179cc25ccb0b8a41e494c84e3697",
+      "label_sha256": "41f6f161d0bb512723db07d6b5735cfbab0326a2b03aad8f2d19fba4211af0d5",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8352449819224536,
+        "WT": 0.9154459515002055,
+        "ET": 0.9082043343653251
+      },
+      "hd95_mm": {
+        "TC": 51.55918884277344,
+        "WT": 53.94209671020508,
+        "ET": 52.430908203125
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 17779,
+        "WT": 87753,
+        "ET": 12802
+      },
+      "prediction_voxels": {
+        "TC": 14305,
+        "WT": 94722,
+        "ET": 13038
+      },
+      "inference_seconds": 2.1147333000008075,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_110_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_010",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_010.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_010.nii.gz",
+      "image_sha256": "46a2334cbaf60783b8c93413a9b7d041baf5f618465495a0a326386df58d8124",
+      "label_sha256": "cbd7ea97d2ef29a1202530f96f3717dfe1db757d3400acbf7c7048c187435352",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.6257596836786996,
+        "WT": 0.593963490635995,
+        "ET": 0.8304055519410106
+      },
+      "hd95_mm": {
+        "TC": 65.94391632080078,
+        "WT": 86.55287170410156,
+        "ET": 60.37797546386719
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 4880,
+        "WT": 20487,
+        "ET": 4467
+      },
+      "prediction_voxels": {
+        "TC": 8777,
+        "WT": 42894,
+        "ET": 4755
+      },
+      "inference_seconds": 2.114315099999658,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_010_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_173",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_173.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_173.nii.gz",
+      "image_sha256": "a3f7d1b2ce4f49df897e8456cdbce251f30373169e6a801c35e1de5fd5b3da54",
+      "label_sha256": "95e32f828f8f16dc5db65750afaf17939e8ead1352be541b5b91c2334750be2a",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9020602511039119,
+        "WT": 0.9411027357604987,
+        "ET": 0.9438377281947261
+      },
+      "hd95_mm": {
+        "TC": 30.089033126831055,
+        "WT": 9.899495124816895,
+        "ET": 1.4142135381698608
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 44315,
+        "WT": 179308,
+        "ET": 30673
+      },
+      "prediction_voxels": {
+        "TC": 42422,
+        "WT": 176498,
+        "ET": 30952
+      },
+      "inference_seconds": 2.1618482000003496,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_173_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_073",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_073.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_073.nii.gz",
+      "image_sha256": "a5b5b7c79e43fa2dd0eb958fddd598b7023a71d9530fb9c7ecb0ea8154d870c4",
+      "label_sha256": "6b20cf8e39198d7830bb2ab2079c793b3a2b91541df698e9719f0867d35ff8be",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.2584948926412341,
+        "WT": 0.7797340941329208,
+        "ET": 0.06872586872586872
+      },
+      "hd95_mm": {
+        "TC": 44.04996871948242,
+        "WT": 65.96134948730469,
+        "ET": 56.9631462097168
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 4869,
+        "WT": 109919,
+        "ET": 238
+      },
+      "prediction_voxels": {
+        "TC": 14319,
+        "WT": 139643,
+        "ET": 2352
+      },
+      "inference_seconds": 2.192136199999368,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_073_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_002",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_002.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_002.nii.gz",
+      "image_sha256": "f4f32cd8d9c46ae672d1e2388b48302bec8b2cbcc334bda3895b0f978d8b5ae2",
+      "label_sha256": "ef06d1a3e35a3483fdf42767bbc3e09509b524de127adb23f1763a09ae195c4b",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8878923766816144,
+        "WT": 0.8315431916436186,
+        "ET": 0.8938875305623472
+      },
+      "hd95_mm": {
+        "TC": 2.8284270763397217,
+        "WT": 66.59278869628906,
+        "ET": 1.4142135381698608
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 9325,
+        "WT": 63061,
+        "ET": 8219
+      },
+      "prediction_voxels": {
+        "TC": 9184,
+        "WT": 85903,
+        "ET": 8141
+      },
+      "inference_seconds": 2.036008399999446,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_002_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_102",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_102.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_102.nii.gz",
+      "image_sha256": "977682b98c7f11ff0b1707908be03ff4e8467a8192cf3306ec3e67cbcb4ccbce",
+      "label_sha256": "ba25a94491b97e79359d68f50f53e449cd9f761d00ef16e6d4a4e29ff746b5f0",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.7917346022027751,
+        "WT": 0.8916605617737882,
+        "ET": 0.8824269537257095
+      },
+      "hd95_mm": {
+        "TC": 27.166154861450195,
+        "WT": 28.473670959472656,
+        "ET": 5.911823272705078
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 16973,
+        "WT": 53850,
+        "ET": 9873
+      },
+      "prediction_voxels": {
+        "TC": 13080,
+        "WT": 53987,
+        "ET": 11586
+      },
+      "inference_seconds": 2.2173922000001767,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_102_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_061",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_061.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_061.nii.gz",
+      "image_sha256": "e523909839dae032bbc14be19d712fdcb30fd44c52d7dfa31a83190346bacde5",
+      "label_sha256": "77b2aefe421d789a96e5c865ba5622a71eba99f8133d002cb1d7ae68baf55a02",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9538852748007052,
+        "WT": 0.8649407902697186,
+        "ET": 0.8702796605342599
+      },
+      "hd95_mm": {
+        "TC": 2.4494898319244385,
+        "WT": 58.906707763671875,
+        "ET": 1.4142135381698608
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 61728,
+        "WT": 83747,
+        "ET": 32631
+      },
+      "prediction_voxels": {
+        "TC": 66474,
+        "WT": 106340,
+        "ET": 37597
+      },
+      "inference_seconds": 1.8922049000002517,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_061_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_161",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_161.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_161.nii.gz",
+      "image_sha256": "0b517d15ef443ff2eb99ef8f0c44d21120e84205b6cab83ba85f5e4b6459dd59",
+      "label_sha256": "5e674db873dc62c30cb347811ffb7c0041811dc573c4f8b7a16cd4658caef0ee",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.6164366065726777,
+        "WT": 0.8787095831165872,
+        "ET": 0.021912805295594612
+      },
+      "hd95_mm": {
+        "TC": 7.071067810058594,
+        "WT": 8.306623458862305,
+        "ET": 26.019224166870117
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 36036,
+        "WT": 107667,
+        "ET": 120
+      },
+      "prediction_voxels": {
+        "TC": 65749,
+        "WT": 124940,
+        "ET": 4261
+      },
+      "inference_seconds": 2.223148100000799,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_161_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_147",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_147.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_147.nii.gz",
+      "image_sha256": "99fd324e1524e17165d9cc610fef35c046ae93d7174aa156478fad45dccf2f22",
+      "label_sha256": "2b5953cfd76b65cf8a68ed0d3abe85e54eb42ad7ec0ec3d06788958776feaf78",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.871466702034185,
+        "WT": 0.8631491967822684,
+        "ET": 0.8504228443545437
+      },
+      "hd95_mm": {
+        "TC": 4.690415859222412,
+        "WT": 71.34213256835938,
+        "ET": 6.633249759674072
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 32105,
+        "WT": 64502,
+        "ET": 20670
+      },
+      "prediction_voxels": {
+        "TC": 28214,
+        "WT": 58939,
+        "ET": 25801
+      },
+      "inference_seconds": 1.9046919000002163,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_147_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_047",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_047.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_047.nii.gz",
+      "image_sha256": "4219579e8ca9492ad02964b0537b0fcb95624da67c3864b0a124f4694e9193c9",
+      "label_sha256": "1ed05bbf5c44985d6e8070c74ebecb5ba8d325f45ef70c77dc0466cd95452647",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.6918577445016378,
+        "WT": 0.8700260848944747,
+        "ET": 0.6082035786954965
+      },
+      "hd95_mm": {
+        "TC": 10.72380542755127,
+        "WT": 70.50177001953125,
+        "ET": 8.485280990600586
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 79523,
+        "WT": 156633,
+        "ET": 36385
+      },
+      "prediction_voxels": {
+        "TC": 142725,
+        "WT": 180727,
+        "ET": 78126
+      },
+      "inference_seconds": 1.8661646999998993,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_047_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_124",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_124.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_124.nii.gz",
+      "image_sha256": "8ad9c0cc33a5084daa913ef6237ec49515b6a3d395d21b0d2dd587b6d17d0c7f",
+      "label_sha256": "941a1db6a8dd931310c8ab98268474750dfce3effd97e0dc039f3d4e5a8388aa",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8789724248794362,
+        "WT": 0.9268435152900623,
+        "ET": 0.7320805445912705
+      },
+      "hd95_mm": {
+        "TC": 63.264522552490234,
+        "WT": 42.0238037109375,
+        "ET": 4.582575798034668
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 63102,
+        "WT": 137324,
+        "ET": 26984
+      },
+      "prediction_voxels": {
+        "TC": 66290,
+        "WT": 140013,
+        "ET": 42940
+      },
+      "inference_seconds": 1.7867481000002954,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_124_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_393",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_393.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_393.nii.gz",
+      "image_sha256": "fcca5eb14da4db7f5bc099b815fedefd434c76d8d744a8057b49110d4808ecf3",
+      "label_sha256": "f70972ba9c52d8c37ad11d9600d94a2c1e0cf546bfbbd485da64074b0a079801",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9475649162557771,
+        "WT": 0.9173497489065284,
+        "ET": 0.9246149138018974
+      },
+      "hd95_mm": {
+        "TC": 1.4142135381698608,
+        "WT": 42.115318298339844,
+        "ET": 1.7320507764816284
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 39933,
+        "WT": 143759,
+        "ET": 35721
+      },
+      "prediction_voxels": {
+        "TC": 37744,
+        "WT": 164891,
+        "ET": 32900
+      },
+      "inference_seconds": 1.7886357999996108,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_393_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_024",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_024.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_024.nii.gz",
+      "image_sha256": "e1d8fb03ee3806d9952f85536e8fc0773259dc1cc52ef686a94430465f99cd91",
+      "label_sha256": "7b7e6910adad5e7116eb00a1bd700e2a735707eabde4b55a9509608cd0f96f84",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.5515078063734227,
+        "WT": 0.5066581680993644,
+        "ET": null
+      },
+      "hd95_mm": {
+        "TC": 15.828763008117676,
+        "WT": 102.5743637084961,
+        "ET": "Infinity"
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "one_empty_infinite"
+      },
+      "ground_truth_voxels": {
+        "TC": 4487,
+        "WT": 30440,
+        "ET": 0
+      },
+      "prediction_voxels": {
+        "TC": 9540,
+        "WT": 85658,
+        "ET": 3340
+      },
+      "inference_seconds": 1.8293551000006119,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_024_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_293",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_293.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_293.nii.gz",
+      "image_sha256": "94328740549566027f076f15595e12a0529f307e5f77b0e3e369955ddb37571a",
+      "label_sha256": "0a74da9a804ce31a73b9f9a4d46bbcaf52ea33ff6f7b692e0385b8a2ea94a6a8",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8878923766816144,
+        "WT": 0.8316012782298128,
+        "ET": 0.8939421725044319
+      },
+      "hd95_mm": {
+        "TC": 2.8284270763397217,
+        "WT": 66.58678436279297,
+        "ET": 1.4142135381698608
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 9325,
+        "WT": 63061,
+        "ET": 8219
+      },
+      "prediction_voxels": {
+        "TC": 9184,
+        "WT": 85895,
+        "ET": 8140
+      },
+      "inference_seconds": 1.8832207000004928,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_293_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_159",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_159.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_159.nii.gz",
+      "image_sha256": "28a8698e69c960f604621173aaaf17023c805e0b46b191a80800b6accd22ffb1",
+      "label_sha256": "c83f5644de1eae6f25280462fb7994192ea916a7d969dc3befff73bbb4519215",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9673263085753449,
+        "WT": 0.9301783778855991,
+        "ET": 0.9428687322537365
+      },
+      "hd95_mm": {
+        "TC": 9.251988410949707,
+        "WT": 17.748239517211914,
+        "ET": 1.4142135381698608
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 58491,
+        "WT": 147172,
+        "ET": 46747
+      },
+      "prediction_voxels": {
+        "TC": 58239,
+        "WT": 148997,
+        "ET": 49400
+      },
+      "inference_seconds": 1.7898550999998406,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_159_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_059",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_059.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_059.nii.gz",
+      "image_sha256": "8b6f2db1736ae77c57130d8d20683c09ab99cc4fdee28d97f22939258d3e13cf",
+      "label_sha256": "7d5d5f2d44b840bc70fc647498249a944b10666eb1ce846e150b4d8ef1ca525b",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8793514974104931,
+        "WT": 0.9293000975782844,
+        "ET": 0.9219051230997756
+      },
+      "hd95_mm": {
+        "TC": 9.0,
+        "WT": 3.605551242828369,
+        "ET": 1.7320507764816284
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 48438,
+        "WT": 99569,
+        "ET": 30621
+      },
+      "prediction_voxels": {
+        "TC": 40382,
+        "WT": 92072,
+        "ET": 32661
+      },
+      "inference_seconds": 1.7964376999998422,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_059_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_028",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_028.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_028.nii.gz",
+      "image_sha256": "85947bb70c1924e0aad9f8149ea3a434672560e450b3f25f2a786b477285c5ad",
+      "label_sha256": "54ca090ce4dc6c1735f6b6ec1353fba6d7be56f37d665829453ca3396a332bbb",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.2733345534407028,
+        "WT": 0.8520425138073087,
+        "ET": 0.8074954454758393
+      },
+      "hd95_mm": {
+        "TC": 76.64202880859375,
+        "WT": 61.26499938964844,
+        "ET": 89.12519073486328
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 55297,
+        "WT": 79624,
+        "ET": 5256
+      },
+      "prediction_voxels": {
+        "TC": 10271,
+        "WT": 85687,
+        "ET": 6271
+      },
+      "inference_seconds": 1.8513136999999915,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_028_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_128",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_128.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_128.nii.gz",
+      "image_sha256": "6fec3b62a71f83d0f8766242fdde9342748292ae8f3f706eda145f35f817048a",
+      "label_sha256": "98c972ade8309ed7689d89affa5cfd39935b0e04a41a1ac85fb0ba216380d035",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.7966677230950333,
+        "WT": 0.8574347427237095,
+        "ET": 0.09343434343434344
+      },
+      "hd95_mm": {
+        "TC": 4.123105525970459,
+        "WT": 46.27688217163086,
+        "ET": 115.92301940917969
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 9845,
+        "WT": 20866,
+        "ET": 99
+      },
+      "prediction_voxels": {
+        "TC": 12242,
+        "WT": 27098,
+        "ET": 693
+      },
+      "inference_seconds": 1.819436400000086,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_128_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_055",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_055.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_055.nii.gz",
+      "image_sha256": "284e808b7c040273c87e50a491b132f6bd20b06cf25998a723e48671f169c357",
+      "label_sha256": "bbd3de26ca435482f887ba06853b7f5af4b6cb45445633f10de425ce8798b8ca",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8736586156589399,
+        "WT": 0.9067805916589619,
+        "ET": 0.9359220260695972
+      },
+      "hd95_mm": {
+        "TC": 3.7416574954986572,
+        "WT": 7.280109882354736,
+        "ET": 1.4142135381698608
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 17128,
+        "WT": 145414,
+        "ET": 12136
+      },
+      "prediction_voxels": {
+        "TC": 13717,
+        "WT": 136877,
+        "ET": 13411
+      },
+      "inference_seconds": 1.9044225999996343,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_055_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_155",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_155.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_155.nii.gz",
+      "image_sha256": "392a0f29149c0c293f7b8d47375ecf12fe1d2247bcc08cb46eb13b26e10e7011",
+      "label_sha256": "478735e95f09078442fca88bdd51f83fb48c8f958aac16353df1b419f6a212a4",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8968666012712236,
+        "WT": 0.9352930907807377,
+        "ET": 0.867128334993579
+      },
+      "hd95_mm": {
+        "TC": 7.0,
+        "WT": 3.0,
+        "ET": 2.4494898319244385
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 133750,
+        "WT": 263750,
+        "ET": 83377
+      },
+      "prediction_voxels": {
+        "TC": 117032,
+        "WT": 257539,
+        "ET": 83265
+      },
+      "inference_seconds": 1.8055859999994937,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_155_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_281",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_281.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_281.nii.gz",
+      "image_sha256": "6fb836fb48ba3a1d8f3d407820378d13faa1ad5e36286e167a254574abf2cd1d",
+      "label_sha256": "3fce920a6d562ba0d5cabb6547bf04ce17969fb53ab39d7ff1244e953c192b14",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9221169779668992,
+        "WT": 0.9270714620664176,
+        "ET": 0.9223863506240696
+      },
+      "hd95_mm": {
+        "TC": 2.8284270763397217,
+        "WT": 3.0,
+        "ET": 3.0
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 25664,
+        "WT": 173928,
+        "ET": 21250
+      },
+      "prediction_voxels": {
+        "TC": 23217,
+        "WT": 177937,
+        "ET": 22415
+      },
+      "inference_seconds": 1.9038181999994777,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_281_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_036",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_036.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_036.nii.gz",
+      "image_sha256": "cdb6cdc8690f899682a9f5bb56f1b3dd416a1f4876fb3d88d00c735bfb836868",
+      "label_sha256": "a268ce22c957bc62452aa07df726959aabea97ea663487acbadb3a5c70a63b2b",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.4558125886438108,
+        "WT": 0.6314640124359597,
+        "ET": 0.25465437246725786
+      },
+      "hd95_mm": {
+        "TC": 95.4007339477539,
+        "WT": 84.57540893554688,
+        "ET": 98.96463775634766
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 56709,
+        "WT": 122956,
+        "ET": 12716
+      },
+      "prediction_voxels": {
+        "TC": 106867,
+        "WT": 225067,
+        "ET": 72419
+      },
+      "inference_seconds": 1.802158700000291,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_036_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_381",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_381.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_381.nii.gz",
+      "image_sha256": "e2460f2d60d12f318897a6a0157c1e37a51d00702dfc639063f7db9bad30d7ce",
+      "label_sha256": "aa2f525e6eeee606b3eeba250f03a9b3727cb7ea56f4eb5cc3233828bd5bc7ba",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.558846521323721,
+        "WT": 0.7378485790777725,
+        "ET": 0.5447154471544715
+      },
+      "hd95_mm": {
+        "TC": 62.349002838134766,
+        "WT": 76.5333251953125,
+        "ET": 80.79727935791016
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 7516,
+        "WT": 26806,
+        "ET": 406
+      },
+      "prediction_voxels": {
+        "TC": 3997,
+        "WT": 33331,
+        "ET": 578
+      },
+      "inference_seconds": 1.8572438000001057,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_381_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_136",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_136.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_136.nii.gz",
+      "image_sha256": "bac58ca576db0f22c561d6dc26151ab432c638e3f04ec21f2c7bc11e1c99aeed",
+      "label_sha256": "c37c3e9683805d2e7ab27eb98f0c8b4abe7ad18c85807de898fb28218e202d4d",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8995574069252799,
+        "WT": 0.8045516436490955,
+        "ET": 0.8476530332143838
+      },
+      "hd95_mm": {
+        "TC": 25.92585563659668,
+        "WT": 19.388137817382812,
+        "ET": 25.729360580444336
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 9493,
+        "WT": 67740,
+        "ET": 7056
+      },
+      "prediction_voxels": {
+        "TC": 9712,
+        "WT": 86490,
+        "ET": 7516
+      },
+      "inference_seconds": 1.7657217000005403,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_136_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_063",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_063.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_063.nii.gz",
+      "image_sha256": "293b7dc111a382473ed9e1bbd0e5f099c30393d91f10f464a3b51a8dca7d71ec",
+      "label_sha256": "8f90b9610a11ef41a19647f775bcc855e3ffb69f564106ceda8ae6953fac0b6a",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.7558820815648644,
+        "WT": 0.9426245848298604,
+        "ET": 0.7580609540636042
+      },
+      "hd95_mm": {
+        "TC": 6.324555397033691,
+        "WT": 37.34969711303711,
+        "ET": 53.849727630615234
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 35880,
+        "WT": 143785,
+        "ET": 8266
+      },
+      "prediction_voxels": {
+        "TC": 50824,
+        "WT": 152178,
+        "ET": 9846
+      },
+      "inference_seconds": 1.848670399999719,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_063_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_163",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_163.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_163.nii.gz",
+      "image_sha256": "6f6168d1065ce35750c6aee3b14f70e4651097bc303ce9758104a00f30d80694",
+      "label_sha256": "c2aa2b59db1e9c76579939baa30d2078e5605694e83c6dd76bac7e82d0a09dc7",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8865574944654252,
+        "WT": 0.9212462739359933,
+        "ET": 0.727310401989225
+      },
+      "hd95_mm": {
+        "TC": 6.082762718200684,
+        "WT": 24.93992805480957,
+        "ET": 7.0
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 55231,
+        "WT": 78353,
+        "ET": 1931
+      },
+      "prediction_voxels": {
+        "TC": 67633,
+        "WT": 87036,
+        "ET": 2895
+      },
+      "inference_seconds": 1.8314510999998674,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_163_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_100",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_100.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_100.nii.gz",
+      "image_sha256": "fdcb50df78c1806982324a750551f3be3fc4f464a3930b30f8a42439ede42a15",
+      "label_sha256": "6fd70d8bf0d0b7779912567438288ff908f602baaf5a869685978a937563ff7c",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8665822953440352,
+        "WT": 0.8889664309509141,
+        "ET": 0.7444888487817455
+      },
+      "hd95_mm": {
+        "TC": 4.123105525970459,
+        "WT": 55.412994384765625,
+        "ET": 6.164413928985596
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 33989,
+        "WT": 88075,
+        "ET": 12325
+      },
+      "prediction_voxels": {
+        "TC": 41076,
+        "WT": 95338,
+        "ET": 18703
+      },
+      "inference_seconds": 1.848404400000618,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_100_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_171",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_171.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_171.nii.gz",
+      "image_sha256": "86840d932b01ae56929494499da1362707e02e34cced67c846e08d47efd7196d",
+      "label_sha256": "22a8121e84b41dd6f1383901e0dcaa2f554029075e9673ac7fc59d0dac7d2150",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8341235711397802,
+        "WT": 0.8790380390796624,
+        "ET": 0.5528409884126763
+      },
+      "hd95_mm": {
+        "TC": 95.3278579711914,
+        "WT": 93.1788558959961,
+        "ET": 106.77593231201172
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 12553,
+        "WT": 20595,
+        "ET": 2049
+      },
+      "prediction_voxels": {
+        "TC": 14654,
+        "WT": 22650,
+        "ET": 5114
+      },
+      "inference_seconds": 1.8237275999999838,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_171_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_071",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_071.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_071.nii.gz",
+      "image_sha256": "964ba0b2165f370c29b135a7e1f695d4b056fb798f15b3877a028438fcffadca",
+      "label_sha256": "ea504722d65cb990924f19c50bde7ab4b1071b74e459cc919ee43d57404f00bf",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.4222606641069997,
+        "WT": 0.6942793462109955,
+        "ET": 0.3794406651549509
+      },
+      "hd95_mm": {
+        "TC": 11.357816696166992,
+        "WT": 59.00847244262695,
+        "ET": 37.078697204589844
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 6233,
+        "WT": 62775,
+        "ET": 758
+      },
+      "prediction_voxels": {
+        "TC": 17468,
+        "WT": 87977,
+        "ET": 3211
+      },
+      "inference_seconds": 1.8835664000007455,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_071_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_112",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_112.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_112.nii.gz",
+      "image_sha256": "350b4a8648e28eb2ca38de5af8bbf60efe8c270b18befd0ce5403ba8182a2fad",
+      "label_sha256": "5679d3904d17a5de756f325d852c1b05d56d3df827f152cc003a6436e27c99b5",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8156637903188593,
+        "WT": 0.9693404634581105,
+        "ET": 0.5784958535887904
+      },
+      "hd95_mm": {
+        "TC": 8.0,
+        "WT": 1.4142135381698608,
+        "ET": 5.4772257804870605
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 72118,
+        "WT": 169185,
+        "ET": 14338
+      },
+      "prediction_voxels": {
+        "TC": 101250,
+        "WT": 167415,
+        "ET": 6644
+      },
+      "inference_seconds": 1.7760126000002856,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_112_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_012",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_012.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_012.nii.gz",
+      "image_sha256": "5547d87657063dc33b5252ccbadb49c66f6d0c91af010b4fc8963f72d84c4943",
+      "label_sha256": "ad5cfab65881974bfb5c08e09ec4a6d7e5a8632700337ab35bf5d9f4b02158a6",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.6952965235173824,
+        "WT": 0.557319729450877,
+        "ET": 0.46602972399150744
+      },
+      "hd95_mm": {
+        "TC": 36.46916580200195,
+        "WT": 106.5176010131836,
+        "ET": 27.658048629760742
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 9121,
+        "WT": 21611,
+        "ET": 708
+      },
+      "prediction_voxels": {
+        "TC": 6038,
+        "WT": 48173,
+        "ET": 1176
+      },
+      "inference_seconds": 1.7038511000000653,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_012_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_423",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_423.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_423.nii.gz",
+      "image_sha256": "518256a6f003f9acc0d29317f278dff28acd87867e7408ed032eceb190b79d7b",
+      "label_sha256": "38317cdf7e112b82ac24be3d34a68ce4143d2c73f17c4f9c7cb5e0cef8d00500",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8888171134686577,
+        "WT": 0.8373075715937014,
+        "ET": 0.8338197822561965
+      },
+      "hd95_mm": {
+        "TC": 13.914011001586914,
+        "WT": 48.92852020263672,
+        "ET": 8.602325439453125
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 36247,
+        "WT": 54958,
+        "ET": 27478
+      },
+      "prediction_voxels": {
+        "TC": 44251,
+        "WT": 75675,
+        "ET": 37277
+      },
+      "inference_seconds": 1.8752285000000484,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_423_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_372",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_372.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_372.nii.gz",
+      "image_sha256": "c585bcf182f7c85671182a358bca37ea9cc05b1ea87a75c548611ea8c7de9611",
+      "label_sha256": "a06e9cb3a1a8bd0d9aa54d5154601c8750c21a30a7f34873ca0a7ab07d403e51",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.921865020225676,
+        "WT": 0.777548031360386,
+        "ET": 0.7877712031558185
+      },
+      "hd95_mm": {
+        "TC": 1.4142135381698608,
+        "WT": 42.06898880004883,
+        "ET": 1.7320507764816284
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 7174,
+        "WT": 39411,
+        "ET": 4321
+      },
+      "prediction_voxels": {
+        "TC": 6917,
+        "WT": 53445,
+        "ET": 5819
+      },
+      "inference_seconds": 1.8148381999999401,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_372_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_272",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_272.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_272.nii.gz",
+      "image_sha256": "02cf9e4c5b8e392604de6852c331d37029f5fa0e1bb59f6579d59c56dc3b79d3",
+      "label_sha256": "cf7839cd171ebf924aae85b9025464d471d6ebc2b8b8abd4c60abe7c0b5a1201",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.07390300230946882,
+        "WT": 0.6404894200666237,
+        "ET": 0.019904165130851456
+      },
+      "hd95_mm": {
+        "TC": 47.87065887451172,
+        "WT": 46.70117950439453,
+        "ET": 54.85435104370117
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 4703,
+        "WT": 97985,
+        "ET": 888
+      },
+      "prediction_voxels": {
+        "TC": 18679,
+        "WT": 201308,
+        "ET": 1825
+      },
+      "inference_seconds": 1.8543372000003728,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_272_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_440",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_440.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_440.nii.gz",
+      "image_sha256": "15e8dea60f10f0e4b0edf712231b7f9b6832b36683edd3207f14d4f7c69a156e",
+      "label_sha256": "030c8a5973d40160e6a0905417e2c2d1566d8d18218dbcff3763e307ee73bcb5",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9152348509336847,
+        "WT": 0.9013062920319707,
+        "ET": 0.9001876461969514
+      },
+      "hd95_mm": {
+        "TC": 61.6518440246582,
+        "WT": 43.0168571472168,
+        "ET": 62.48959732055664
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 18677,
+        "WT": 66816,
+        "ET": 17941
+      },
+      "prediction_voxels": {
+        "TC": 21540,
+        "WT": 75189,
+        "ET": 20962
+      },
+      "inference_seconds": 2.0530635999994047,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_440_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_311",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_311.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_311.nii.gz",
+      "image_sha256": "1925136fc7d84012f14369555ac4b6de8b389a634d976a5fb24369d8bd4e8731",
+      "label_sha256": "4b8efbb3f2b3f55cb86aba718f4675f132d6cf304c9199816f6e16d02e662af3",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8726112416283881,
+        "WT": 0.8906092101713361,
+        "ET": 0.8116732902307373
+      },
+      "hd95_mm": {
+        "TC": 75.42546081542969,
+        "WT": 50.9705810546875,
+        "ET": 12.247448921203613
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 14713,
+        "WT": 100758,
+        "ET": 7222
+      },
+      "prediction_voxels": {
+        "TC": 13806,
+        "WT": 117935,
+        "ET": 9637
+      },
+      "inference_seconds": 1.9056637999992745,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_311_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_211",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_211.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_211.nii.gz",
+      "image_sha256": "e1beef773f5cdfcede056a4d8f10936ecb034879bbcb84758c4d69add8538779",
+      "label_sha256": "f1d16b661f7ac21e22e53d0aa48b4a543555b4fcaaa883373f390cc29c85c85d",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8233520989405558,
+        "WT": 0.5360908915848257,
+        "ET": 0.8057195407754606
+      },
+      "hd95_mm": {
+        "TC": 18.601076126098633,
+        "WT": 71.26008605957031,
+        "ET": 15.264337539672852
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 23320,
+        "WT": 58270,
+        "ET": 14167
+      },
+      "prediction_voxels": {
+        "TC": 21798,
+        "WT": 71555,
+        "ET": 19542
+      },
+      "inference_seconds": 1.8931131999997888,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_211_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_260",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_260.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_260.nii.gz",
+      "image_sha256": "b8140be3c79524643cf6d00477dc6885c17d1a9c88d6ad952206e55e669e07b4",
+      "label_sha256": "7dfeef7e04bb1fb18fdae2211cc0cb43fe63b9e9cfcb780cef4aadebf2296ad2",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8858315479724324,
+        "WT": 0.9328599250649581,
+        "ET": 0.9196484620213434
+      },
+      "hd95_mm": {
+        "TC": 12.688577651977539,
+        "WT": 33.74759292602539,
+        "ET": 2.8284270763397217
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 20898,
+        "WT": 108390,
+        "ET": 14096
+      },
+      "prediction_voxels": {
+        "TC": 17843,
+        "WT": 100591,
+        "ET": 14578
+      },
+      "inference_seconds": 1.7668280000007144,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_260_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_360",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_360.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_360.nii.gz",
+      "image_sha256": "16978eac3f31124c18d2f22bd63726f2a655696ae76d43e8f93d8129ed23f06f",
+      "label_sha256": "b23f41b4d22cbd199558b0ce2bcfedf8c24ef745b5bab52c8cd45863c1792c20",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9176703619692662,
+        "WT": 0.805128276709193,
+        "ET": 0.8086462371873174
+      },
+      "hd95_mm": {
+        "TC": 3.0,
+        "WT": 53.40412139892578,
+        "ET": 2.0
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 15461,
+        "WT": 59246,
+        "ET": 8665
+      },
+      "prediction_voxels": {
+        "TC": 15840,
+        "WT": 84038,
+        "ET": 10164
+      },
+      "inference_seconds": 1.8672088000002987,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_360_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_431",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_431.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_431.nii.gz",
+      "image_sha256": "00bc2474df44c766af0276db96b2f229e059caef0164deb58a84338340822f46",
+      "label_sha256": "771a1c361a7a41744725c6c643ccfbad6b5b78e9266ad6ec4a50b93d0852876a",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.959119861030689,
+        "WT": 0.9226179812912321,
+        "ET": 0.9311173264486517
+      },
+      "hd95_mm": {
+        "TC": 2.2360680103302,
+        "WT": 3.7416574954986572,
+        "ET": 1.4142135381698608
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 42503,
+        "WT": 122929,
+        "ET": 26938
+      },
+      "prediction_voxels": {
+        "TC": 43847,
+        "WT": 133849,
+        "ET": 28838
+      },
+      "inference_seconds": 1.7911771999997654,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_431_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_203",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_203.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_203.nii.gz",
+      "image_sha256": "877ac88bcad3ce6f689f147070dee85ebc558d585e03192a832d2a9256f81aa0",
+      "label_sha256": "45b396a00188658c58556235f00af4715d2266415ed0c6b39ebb7bc234e2d7a9",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8331269063684259,
+        "WT": 0.9193737829567583,
+        "ET": 0.701767613303175
+      },
+      "hd95_mm": {
+        "TC": 4.123105525970459,
+        "WT": 4.0,
+        "ET": 6.480740547180176
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 27226,
+        "WT": 126496,
+        "ET": 9779
+      },
+      "prediction_voxels": {
+        "TC": 26869,
+        "WT": 132328,
+        "ET": 14095
+      },
+      "inference_seconds": 1.8249257000006764,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_203_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_303",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_303.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_303.nii.gz",
+      "image_sha256": "8bdf876b1fceb7574b2d8995902d0f5d7ed712a735f54f1201f065ba58d07fa2",
+      "label_sha256": "1f8de054e4736032bc9ae0f1a5e7ad1e4bd0583c2c5e36686505291b110d1fe1",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8918028745746,
+        "WT": 0.9113659664507122,
+        "ET": 0.8212130291486539
+      },
+      "hd95_mm": {
+        "TC": 11.704699516296387,
+        "WT": 7.280109882354736,
+        "ET": 4.4721360206604
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 76260,
+        "WT": 183094,
+        "ET": 50901
+      },
+      "prediction_voxels": {
+        "TC": 69779,
+        "WT": 183650,
+        "ET": 42551
+      },
+      "inference_seconds": 2.141168799999832,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_303_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_452",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_452.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_452.nii.gz",
+      "image_sha256": "0be592a0e85c28aed3953002f2b4adf8b5cfadbfcd6e0e8e03059bea5876cb3b",
+      "label_sha256": "e7d3704f75e498841734dc8a15476e143857993f206733bf0e9cd308de045947",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9418212765957447,
+        "WT": 0.8344164895285221,
+        "ET": 0.9250848919908417
+      },
+      "hd95_mm": {
+        "TC": 58.87528991699219,
+        "WT": 28.43940544128418,
+        "ET": 1.4142135381698608
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 56563,
+        "WT": 125370,
+        "ET": 43375
+      },
+      "prediction_voxels": {
+        "TC": 60937,
+        "WT": 104206,
+        "ET": 47034
+      },
+      "inference_seconds": 2.180674600000202,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_452_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_256",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_256.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_256.nii.gz",
+      "image_sha256": "2c14fca85f44c3bd61e562ec1a5f3a5a0b262c957f9a6c029d4e18764216ed8b",
+      "label_sha256": "c0b2612a0f7ef8adc55dfc7607ae85e8c85c90001872b41e6b8aa41f593fb8f4",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9057846191436076,
+        "WT": 0.9348349014541547,
+        "ET": 0.7758816192312054
+      },
+      "hd95_mm": {
+        "TC": 6.4031243324279785,
+        "WT": 11.627476692199707,
+        "ET": 3.1622776985168457
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 77092,
+        "WT": 109756,
+        "ET": 30400
+      },
+      "prediction_voxels": {
+        "TC": 86618,
+        "WT": 120137,
+        "ET": 40152
+      },
+      "inference_seconds": 1.8544382000000041,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_256_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_407",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_407.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_407.nii.gz",
+      "image_sha256": "1d1a7e8ec7a845f21b95a78df79b4080d4974a00d647a66fe9c67439f688d8cb",
+      "label_sha256": "577e5db9f278506afff1972fe51d91fee027e9751fd08ef2c1df5687bb604b01",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.971710189452125,
+        "WT": 0.9482250699661217,
+        "ET": 0.9767564364258906
+      },
+      "hd95_mm": {
+        "TC": 1.0,
+        "WT": 1.7320507764816284,
+        "ET": 1.0
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 15664,
+        "WT": 90740,
+        "ET": 15090
+      },
+      "prediction_voxels": {
+        "TC": 15584,
+        "WT": 99352,
+        "ET": 15284
+      },
+      "inference_seconds": 1.8285250999997515,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_407_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_356",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_356.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_356.nii.gz",
+      "image_sha256": "fcf4301bc516ad5f86780187a87a81f180c9c409c8260b934bb37914cdfe8b88",
+      "label_sha256": "812710a8c680dea5cbea3596f105a9e7fad3b3fcae27398e56611fb3f03ea2e9",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9604083401550537,
+        "WT": 0.9382599837959772,
+        "ET": 0.8899151800537294
+      },
+      "hd95_mm": {
+        "TC": 1.4142135381698608,
+        "WT": 2.0,
+        "ET": 1.4142135381698608
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 50151,
+        "WT": 142132,
+        "ET": 30143
+      },
+      "prediction_voxels": {
+        "TC": 53684,
+        "WT": 155325,
+        "ET": 36115
+      },
+      "inference_seconds": 1.8189163000006374,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_356_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_235",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_235.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_235.nii.gz",
+      "image_sha256": "df73f22cd3fa791c7a21fa564888cdc3294879d665913f1c01528ca75c1dc939",
+      "label_sha256": "e9ed24daa63caf5e8139837138193bf53fd5be6af3a0b4d6bc7c48737e31b1d8",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8549109570754764,
+        "WT": 0.9522016602253838,
+        "ET": 0.8489277740277273
+      },
+      "hd95_mm": {
+        "TC": 10.862780570983887,
+        "WT": 3.0,
+        "ET": 3.1622776985168457
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 45151,
+        "WT": 97314,
+        "ET": 33780
+      },
+      "prediction_voxels": {
+        "TC": 55980,
+        "WT": 93383,
+        "ET": 43256
+      },
+      "inference_seconds": 1.7864377000005334,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_235_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_082",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_082.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_082.nii.gz",
+      "image_sha256": "b25e570556e258d7e0a51fc6ebc68c4e2c9da86f987053ceb1ec4aed274c6eab",
+      "label_sha256": "11fdca435e732e1fb6e45c4515da13fb0946482f8e3906308db11e65848350a5",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9683667787241941,
+        "WT": 0.9439197887267438,
+        "ET": 0.9647167281260476
+      },
+      "hd95_mm": {
+        "TC": 1.4142135381698608,
+        "WT": 25.39980125427246,
+        "ET": 1.4142135381698608
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 119723,
+        "WT": 140901,
+        "ET": 116726
+      },
+      "prediction_voxels": {
+        "TC": 122712,
+        "WT": 145742,
+        "ET": 121914
+      },
+      "inference_seconds": 1.7852474999999686,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_082_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_464",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_464.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_464.nii.gz",
+      "image_sha256": "268c4a2c75777f2b33f72874dd28c9e704d1909a66a605c2148dec595fea080a",
+      "label_sha256": "5468f4685d3a4b6e43a0e6a48931f63db08713530a1bcad9e972ead35593a011",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9614052537164982,
+        "WT": 0.9583982178389134,
+        "ET": 0.8948703699229227
+      },
+      "hd95_mm": {
+        "TC": 1.7320507764816284,
+        "WT": 2.4494898319244385,
+        "ET": 2.0
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 56625,
+        "WT": 91560,
+        "ET": 39514
+      },
+      "prediction_voxels": {
+        "TC": 55981,
+        "WT": 93384,
+        "ET": 43260
+      },
+      "inference_seconds": 1.8167444999999134,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_464_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_335",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_335.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_335.nii.gz",
+      "image_sha256": "e67e3490b8ca287fdf8ed8672536a13131f3efb9e021da0695905821653c936a",
+      "label_sha256": "3c75535181d427db1e2a58cc7901d4e1d61f0ea5a04dcdf1d056128e637bc546",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8972253435906301,
+        "WT": 0.9145222592965571,
+        "ET": 0.7528108285121712
+      },
+      "hd95_mm": {
+        "TC": 4.4721360206604,
+        "WT": 56.178287506103516,
+        "ET": 3.316624879837036
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 34327,
+        "WT": 101416,
+        "ET": 15158
+      },
+      "prediction_voxels": {
+        "TC": 35087,
+        "WT": 114067,
+        "ET": 21486
+      },
+      "inference_seconds": 2.0000762999998187,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_335_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_182",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_182.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_182.nii.gz",
+      "image_sha256": "c563408e4c01a845c5911ac9c06f883398a54aad285c504c801f8ee3e9def82f",
+      "label_sha256": "97922ec7699fb41e902ccd31973a4e46929369cd75725f10981935b1cc9513bd",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9358554775675991,
+        "WT": 0.9443770672546857,
+        "ET": 0.8674936442535285
+      },
+      "hd95_mm": {
+        "TC": 3.0,
+        "WT": 2.8284270763397217,
+        "ET": 2.2360680103302
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 74341,
+        "WT": 144678,
+        "ET": 40193
+      },
+      "prediction_voxels": {
+        "TC": 71408,
+        "WT": 145562,
+        "ET": 51063
+      },
+      "inference_seconds": 1.8895200000006298,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_182_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_248",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_248.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_248.nii.gz",
+      "image_sha256": "37ad0391b560682d63a840151429a2079db2e461b2c545682d4ecec49382ddac",
+      "label_sha256": "baa4f0a2807245f00ac77f2c340b258792be31ce5670875202d945ab0f9de272",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.734103230747526,
+        "WT": 0.7764543841216306,
+        "ET": 0.8816797387615589
+      },
+      "hd95_mm": {
+        "TC": 11.180339813232422,
+        "WT": 30.253925323486328,
+        "ET": 13.390284538269043
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 28316,
+        "WT": 61302,
+        "ET": 14894
+      },
+      "prediction_voxels": {
+        "TC": 21301,
+        "WT": 51959,
+        "ET": 17873
+      },
+      "inference_seconds": 1.8768587000004118,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_248_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_419",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_419.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_419.nii.gz",
+      "image_sha256": "7bed4555ba105407be371893237d7edc904fad66466b87b6778c3112530fb807",
+      "label_sha256": "c8dfe791eea164c431729b9a6a702c038f5bc830ba831e55cf046851adda7878",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9545720206152701,
+        "WT": 0.9649542503705976,
+        "ET": 0.934010152284264
+      },
+      "hd95_mm": {
+        "TC": 1.4142135381698608,
+        "WT": 1.4142135381698608,
+        "ET": 2.0
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 28513,
+        "WT": 95391,
+        "ET": 25236
+      },
+      "prediction_voxels": {
+        "TC": 27950,
+        "WT": 100239,
+        "ET": 24802
+      },
+      "inference_seconds": 1.8112240000000384,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_419_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_348",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_348.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_348.nii.gz",
+      "image_sha256": "25fe3423f9eb9281394c3747de2dc4a40200f4e977ad9e5768d851d7cf1ca5c8",
+      "label_sha256": "3c6faf422c2e12e053b29f6e69fd206b6a0574b06f4b7d97b2aa64f43eef6a94",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9485166847804211,
+        "WT": 0.8967340761137147,
+        "ET": 0.9003836442928813
+      },
+      "hd95_mm": {
+        "TC": 1.4142135381698608,
+        "WT": 35.1425666809082,
+        "ET": 1.4142135381698608
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 37646,
+        "WT": 80574,
+        "ET": 30995
+      },
+      "prediction_voxels": {
+        "TC": 36883,
+        "WT": 83943,
+        "ET": 29999
+      },
+      "inference_seconds": 2.244275000000016,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_348_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_339",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_339.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_339.nii.gz",
+      "image_sha256": "d5901d5a1f7a19b8c793c48abb53291eeb198888552d0be1386b163c111639c5",
+      "label_sha256": "b4ba641d9c66843b748d965c9562ee2737ba98987b16bcbc954027ad3564c8fd",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.955523200388262,
+        "WT": 0.9413696179240728,
+        "ET": 0.8801733681954161
+      },
+      "hd95_mm": {
+        "TC": 2.0,
+        "WT": 2.2360680103302,
+        "ET": 2.2360680103302
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 56666,
+        "WT": 97205,
+        "ET": 40108
+      },
+      "prediction_voxels": {
+        "TC": 58720,
+        "WT": 99536,
+        "ET": 44798
+      },
+      "inference_seconds": 2.46360359999926,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_339_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_468",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_468.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_468.nii.gz",
+      "image_sha256": "3d89f440da97990a171524409992c47d7a0e3b3ee2cead4305891ba7b77bb091",
+      "label_sha256": "da04ee8238e9778be1a783806d44b910b7538180ed29e5160501acce3a784e7d",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8932470074531356,
+        "WT": 0.8586944802265337,
+        "ET": 0.7928161190095094
+      },
+      "hd95_mm": {
+        "TC": 3.605551242828369,
+        "WT": 37.86819076538086,
+        "ET": 4.989897727966309
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 26245,
+        "WT": 80769,
+        "ET": 17276
+      },
+      "prediction_voxels": {
+        "TC": 26887,
+        "WT": 95452,
+        "ET": 25208
+      },
+      "inference_seconds": 2.2471126999998887,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_468_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_239",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_239.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_239.nii.gz",
+      "image_sha256": "74a676d5eb67789d9e7744bc2fa853866aef68b0b2505e40881cd4ec83a13122",
+      "label_sha256": "da8fe727f7417e6fe390ab009e7473ffa9b139bf7c959c72527ed274bd9ddee1",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.837738688740476,
+        "WT": 0.8970454227812719,
+        "ET": 0.8734231405902163
+      },
+      "hd95_mm": {
+        "TC": 33.970577239990234,
+        "WT": 6.4031243324279785,
+        "ET": 3.605551242828369
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 52381,
+        "WT": 166906,
+        "ET": 31732
+      },
+      "prediction_voxels": {
+        "TC": 53929,
+        "WT": 190844,
+        "ET": 38344
+      },
+      "inference_seconds": 2.7492879999999786,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_239_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_344",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_344.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_344.nii.gz",
+      "image_sha256": "402f55ffae7c098708a5ec8dd248287dfab9478280f34b3cf2b740a573e420d3",
+      "label_sha256": "abad2a961c7ed3c4d4c1a4b4a604f06689b29c046669323d4e2ae105139f62ed",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9599865353374215,
+        "WT": 0.8672373727203958,
+        "ET": 0.8221436328701512
+      },
+      "hd95_mm": {
+        "TC": 6.4496941566467285,
+        "WT": 52.35456085205078,
+        "ET": 1.4142135381698608
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 68033,
+        "WT": 82780,
+        "ET": 32372
+      },
+      "prediction_voxels": {
+        "TC": 68621,
+        "WT": 100969,
+        "ET": 39450
+      },
+      "inference_seconds": 3.319421500000317,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_344_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_415",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_415.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_415.nii.gz",
+      "image_sha256": "85a5217806fd6a92622a78e93d359855de5171f0c0c4f1904b078584e67a3b99",
+      "label_sha256": "1820ea81172f82e95f8f331b6402f22f00dcf692752872395d4df70398d6b35b",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.8990596192152684,
+        "WT": 0.9319063608642517,
+        "ET": 0.9278157529001333
+      },
+      "hd95_mm": {
+        "TC": 42.0238037109375,
+        "WT": 40.62696075439453,
+        "ET": 42.84623718261719
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 20900,
+        "WT": 82921,
+        "ET": 17626
+      },
+      "prediction_voxels": {
+        "TC": 22274,
+        "WT": 85641,
+        "ET": 17631
+      },
+      "inference_seconds": 2.184826000000612,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_415_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_244",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_244.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_244.nii.gz",
+      "image_sha256": "8519a9acec1e11061050731ba6b9372b71d012654e9fe544b7c46a2be99f5ec4",
+      "label_sha256": "62916dffaab314e2399809a279322079fcab6e93e61822364608dca8c631f4e5",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.7403908541174639,
+        "WT": 0.8751425225961701,
+        "ET": 0.6655222010856957
+      },
+      "hd95_mm": {
+        "TC": 41.15822982788086,
+        "WT": 61.22907638549805,
+        "ET": 12.884099006652832
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 88784,
+        "WT": 147471,
+        "ET": 7878
+      },
+      "prediction_voxels": {
+        "TC": 142402,
+        "WT": 177916,
+        "ET": 13675
+      },
+      "inference_seconds": 2.7098468000003777,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_244_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_190",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_190.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_190.nii.gz",
+      "image_sha256": "d31899c6cd142e8a765bf20a38c0cdee44c757546af97dac452df415e700f0fa",
+      "label_sha256": "5f7c575e593d0d14159cdf407582922761071a73084cda7774b136d4d93c62ee",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9198365197691684,
+        "WT": 0.9054470959796115,
+        "ET": 0.8351534061362454
+      },
+      "hd95_mm": {
+        "TC": 31.968734741210938,
+        "WT": 28.865203857421875,
+        "ET": 2.2360680103302
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 31865,
+        "WT": 84826,
+        "ET": 19955
+      },
+      "prediction_voxels": {
+        "TC": 33464,
+        "WT": 79188,
+        "ET": 24274
+      },
+      "inference_seconds": 2.792017300000225,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_190_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_327",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_327.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_327.nii.gz",
+      "image_sha256": "bed2932bbd5a016c84d2cdef4b77065ebbd25b66288bd93df2df12da93d0b68a",
+      "label_sha256": "22984fd85cbb34576971f007c4ef86a97d019836dd5a7df8e6842590965cf145",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9322358027770848,
+        "WT": 0.9360226012945678,
+        "ET": 0.8708083613506797
+      },
+      "hd95_mm": {
+        "TC": 99.31364440917969,
+        "WT": 29.098939895629883,
+        "ET": 97.94998168945312
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 24355,
+        "WT": 122656,
+        "ET": 16009
+      },
+      "prediction_voxels": {
+        "TC": 23753,
+        "WT": 129011,
+        "ET": 18196
+      },
+      "inference_seconds": 2.490306800000326,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_327_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_476",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_476.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_476.nii.gz",
+      "image_sha256": "5822554bf9f3b11e22bb4e9ca110eeffb160991050eb40b625c54f8b5c25c2c2",
+      "label_sha256": "1335b724a38ebe94f84a4d236582a1a4d2f709381ccea7da8838681c659246ce",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.9592669147030454,
+        "WT": 0.9607140032167057,
+        "ET": 0.9281796311146753
+      },
+      "hd95_mm": {
+        "TC": 1.4142135381698608,
+        "WT": 1.7320507764816284,
+        "ET": 1.4142135381698608
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 35839,
+        "WT": 74986,
+        "ET": 29516
+      },
+      "prediction_voxels": {
+        "TC": 36731,
+        "WT": 76722,
+        "ET": 32834
+      },
+      "inference_seconds": 2.4402423999999883,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_476_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_090",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_090.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_090.nii.gz",
+      "image_sha256": "90bb96bc9d56801b2a51b821b6f882ba998bfe0afbb73456edef405f73db1b03",
+      "label_sha256": "84cee5d3f3bb006738358260a19bb12e3e4c530734325ac080cd7e70d71ffa38",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.721678718275911,
+        "WT": 0.6436534304699384,
+        "ET": 0.5889601198901008
+      },
+      "hd95_mm": {
+        "TC": 7.071067810058594,
+        "WT": 37.66961669921875,
+        "ET": 9.69536018371582
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 22791,
+        "WT": 105366,
+        "ET": 10878
+      },
+      "prediction_voxels": {
+        "TC": 33633,
+        "WT": 94490,
+        "ET": 25155
+      },
+      "inference_seconds": 2.5786692000001494,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_090_pred_regions.nii.gz"
+    },
+    {
+      "case": "BRATS_227",
+      "source_image": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_227.nii.gz",
+      "source_label": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\labelsTr\\BRATS_227.nii.gz",
+      "image_sha256": "0ffdaa5aa9c1bc41d0221fab97968b3e077bc4d7dd1ae5b2c523678247f1000c",
+      "label_sha256": "14bbe81735e58c3bbaea6f4a96ae67b40a0829e112acd9af41ccd746289009ab",
+      "image_shape": [
+        4,
+        240,
+        240,
+        155
+      ],
+      "spacing_mm": [
+        1.0,
+        1.0,
+        1.0
+      ],
+      "dice": {
+        "TC": 0.6934975277544547,
+        "WT": 0.8031748522998621,
+        "ET": 0.6482044198895027
+      },
+      "hd95_mm": {
+        "TC": 7.071067810058594,
+        "WT": 11.180339813232422,
+        "ET": 8.160690307617188
+      },
+      "hd95_status": {
+        "TC": "finite",
+        "WT": "finite",
+        "ET": "finite"
+      },
+      "ground_truth_voxels": {
+        "TC": 31337,
+        "WT": 110838,
+        "ET": 6584
+      },
+      "prediction_voxels": {
+        "TC": 22258,
+        "WT": 156765,
+        "ET": 7896
+      },
+      "inference_seconds": 2.630340200000319,
+      "peak_cuda_allocated_bytes": 149993472,
+      "displayed_axial_slice": null,
+      "png": null,
+      "prediction_regions_nifti": "D:\\SRM Projects\\Slim-UNETR-main\\outputs\\local_validation_97\\BRATS_227_pred_regions.nii.gz"
+    }
+  ],
+  "model_state_unchanged": true,
+  "checkpoint_file_unchanged": true,
+  "completed_utc": "2026-10-17T22:36:07.629283+00:00",
+  "summary": {
+    "case_count": 97,
+    "dice": {
+      "TC": {
+        "mean": 0.8130341398139534,
+        "valid_cases": 97,
+        "empty_ground_truth_excluded": 0
+      },
+      "WT": {
+        "mean": 0.8537202782943272,
+        "valid_cases": 97,
+        "empty_ground_truth_excluded": 0
+      },
+      "ET": {
+        "mean": 0.7505734178816549,
+        "valid_cases": 95,
+        "empty_ground_truth_excluded": 2
+      }
+    },
+    "hd95_mm": {
+      "TC": {
+        "mean": 23.446139349150904,
+        "finite_only_mean": 23.446139349150904,
+        "finite_cases": 97,
+        "infinite_cases": 0,
+        "both_empty_undefined_excluded": 0
+      },
+      "WT": {
+        "mean": 34.85527372237333,
+        "finite_only_mean": 34.85527372237333,
+        "finite_cases": 97,
+        "infinite_cases": 0,
+        "both_empty_undefined_excluded": 0
+      },
+      "ET": {
+        "mean": "Infinity",
+        "finite_only_mean": 20.187197364004035,
+        "finite_cases": 95,
+        "infinite_cases": 2,
+        "both_empty_undefined_excluded": 0
+      }
+    },
+    "overall_dice": 0.8057759453299784,
+    "overall_hd95_mm": "Infinity",
+    "overall_hd95_finite_only_mm": 26.16287014517609,
+    "overall_definition": "Equal-weight arithmetic mean of TC, WT and ET case-mean metrics; not pooled voxel Dice."
+  },
+  "model_state_sha256_before": "d32cd28ce7796fad6865eed90e397776681ba010b18885b9cc72d90070cf9e0a",
+  "model_state_sha256_after": "d32cd28ce7796fad6865eed90e397776681ba010b18885b9cc72d90070cf9e0a"
+}

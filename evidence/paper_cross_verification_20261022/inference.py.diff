@@ -1,0 +1,19 @@
+--- upstream/inference.py
++++ local/inference.py
+@@ -4,7 +4,6 @@
+ from typing import Dict
+ 
+ import monai
+-import pytz
+ import torch
+ import yaml
+ from accelerate import Accelerator
+@@ -179,7 +178,7 @@
+         is_HepaticVessel = True
+ 
+     utils.same_seeds(50)
+-    logging_dir = os.getcwd() + "/logs/" + str(datetime.now())
++    logging_dir = os.getcwd() + "/logs/" + datetime.now().strftime("%Y-%m-%d_%H-%M-%S")
+     accelerator = Accelerator(cpu=False)
+     Logger(logging_dir if accelerator.is_local_main_process else None)
+     accelerator.init_trackers(os.path.split(__file__)[-1].split(".")[0])

@@ -14,6 +14,8 @@ Local additions include the browser UI, frozen inference adapters, setup scripts
 
 `examples/BRATS_409/image.nii.gz` and `reference.nii.gz` are public MSD Task01 data under **CC BY-SA 4.0**, not MIT. See the [sample attribution](examples/BRATS_409/README.md). The full dataset, uploaded scans, and generated results are not committed.
 
+The handoff archive's `outputs/` folder also holds unmodified or derived MSD Task01 data (cases BRATS_012, 024, 026, 128, 171, 327, 409) and `figures/` holds the authors' paper tables from their repository. The MSD data carries the same CC BY-SA 4.0 terms and attribution as above.
+
 ## Optional 2D model
 
 JPG/PNG segmentation uses a separate pretrained BRISC SegFormer-B5 model from `imbenjita/BrainTumorClassifier`. No downloaded model weights are committed. Its source card describes research-use terms, and its NVIDIA backbone has separate licensing. See [model provenance](docs/models/BRISC_PROVENANCE.md) and the retained [NVIDIA license](docs/models/NVIDIA_LICENSE.txt). Installing that optional model does not change the identity or claimed results of Slim UNETR.

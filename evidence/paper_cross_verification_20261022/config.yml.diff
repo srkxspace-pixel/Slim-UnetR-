@@ -1,0 +1,35 @@
+--- upstream/config.yml
++++ local/config.yml
+@@ -1,6 +1,6 @@
+ is_brats2021: False
+-is_brain2019: False
+-is_hepatic_vessel2021: True
++is_brain2019: True
++is_hepatic_vessel2021: False
+ 
+ brats2021:
+   data_root: /dataset/cv/seg/BRaTS2021/
+@@ -35,12 +35,12 @@
+     dropout: 0.3
+ 
+ brain2019:
+-  data_root: /dataset/cv/seg/MSD/Task01_Brain/
++  data_root: D:/SRM Projects/datasets/Task01_BrainTumour  # paper: /dataset/cv/seg/MSD/Task01_Brain/
+   trainer:
+     num_epochs: 300
+     warmup: 5
+     train_ratio: 0.8
+-    batch_size: 16
++    batch_size: 1  # paper: 16 (local GTX 1650 has 4 GB VRAM)
+     lr: 0.001
+     min_lr: 0.0000001
+     optimizer: adamw
+@@ -48,7 +48,7 @@
+     weight_decay_end: 0.04
+     momentum_teacher: 0.996
+     pred_ratio_var: 0
+-    num_workers: 16
++    num_workers: 4  # paper: 16 (local: 8 cores / 8 GB RAM)
+ 
+     image_size: 128
+     resume: False

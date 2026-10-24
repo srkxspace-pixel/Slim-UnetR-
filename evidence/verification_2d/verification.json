@@ -1,0 +1,327 @@
+{
+  "model": {
+    "name": "BRISC SegFormer-B5 \u00b7 2D binary tumour segmentation",
+    "device": "cuda",
+    "gpu": "NVIDIA GeForce GTX 1650",
+    "head_revision": "04c94c44998bd793e97dd8c1a539fbfbd21c958b",
+    "base_revision": "739f5d4692954e4a185eac280dec1ba5a7d52f1d"
+  },
+  "dataset_revision": "6aafaf9cfe043e74a1d2a45222339096f220046b",
+  "dataset_sha256": "85511543c2ad9abff44e68ee5abab353a5089d5b6f241960c2ea7462aaf4262b",
+  "selection": "First and last filename for each tumour type x plane in the released segmentation test split (18); first and last normal image per plane (6). No cherry-picking.",
+  "scope": "Engineering smoke evaluation, not a clinical or independently held-out benchmark; dataset/checkpoint patient overlap is unverified.",
+  "reference_mapping": "Source masks retained as *_source_reference.png. Canonical binary references use source grayscale > 0 exactly as upstream load_slice; no manual correction.",
+  "annotated_cases": 18,
+  "mean_slice_dice": 0.7525100574900679,
+  "mean_slice_iou": 0.648552607549484,
+  "normal_image_controls": 6,
+  "normal_controls_with_nonempty_prediction": 2,
+  "checks": [
+    "Real JPG upload with reference",
+    "Real PNG upload without reference",
+    "Identical JPEG-decoded/PNG masks",
+    "All image panels and overlay opacity",
+    "ZIP/download contents and geometry",
+    "Concurrency rejected",
+    "Private uploads not downloadable",
+    "Invalid panel/opacity rejected",
+    "Completed result recovery after restart",
+    "Checkpoint and model state unchanged"
+  ],
+  "cases": [
+    {
+      "source": "brisc2025/segmentation_task/test/images/brisc2025_test_00001_gl_ax_t1.jpg",
+      "input_sha256": "b513a83f68e486f45159b004d356782e782840145321511f99dd38399251b6d7",
+      "metrics": {
+        "dice": 0.0,
+        "iou": 0.0,
+        "true_positive_pixels": 0,
+        "false_positive_pixels": 7354,
+        "false_negative_pixels": 1498,
+        "policy": "Original oriented image pixel grid; both masks empty gives Dice=IoU=1; one empty gives 0."
+      },
+      "predicted_pixels": 7354,
+      "inference_seconds": 9.94111159996828
+    },
+    {
+      "source": "brisc2025/segmentation_task/test/images/brisc2025_test_00085_gl_ax_t1.jpg",
+      "input_sha256": "5a743e10f894f426ba66ad637f38cd9246dae2ab6c5ad688316df12d45c0c5fc",
+      "metrics": {
+        "dice": 0.19795221843003413,
+        "iou": 0.10984848484848485,
+        "true_positive_pixels": 261,
+        "false_positive_pixels": 1775,
+        "false_negative_pixels": 340,
+        "policy": "Original oriented image pixel grid; both masks empty gives Dice=IoU=1; one empty gives 0."
+      },
+      "predicted_pixels": 2036,
+      "inference_seconds": 0.42948329995851964
+    },
+    {
+      "source": "brisc2025/segmentation_task/test/images/brisc2025_test_00086_gl_co_t1.jpg",
+      "input_sha256": "6674e11f2138d476e985e5ab20b8550b049c9bc205341a753a500ac2d420321e",
+      "metrics": {
+        "dice": 0.8654914271914996,
+        "iou": 0.7628778203490847,
+        "true_positive_pixels": 3584,
+        "false_positive_pixels": 1032,
+        "false_negative_pixels": 82,
+        "policy": "Original oriented image pixel grid; both masks empty gives Dice=IoU=1; one empty gives 0."
+      },
+      "predicted_pixels": 4616,
+      "inference_seconds": 0.31107880000490695
+    },
+    {
+      "source": "brisc2025/segmentation_task/test/images/brisc2025_test_00166_gl_co_t1.jpg",
+      "input_sha256": "521a6459df9668d249c2a91218a0a1ac48d98bf1e4268457d0b029ee530bee39",
+      "metrics": {
+        "dice": 0.8665955176093917,
+        "iou": 0.7645951035781544,
+        "true_positive_pixels": 4466,
+        "false_positive_pixels": 1093,
+        "false_negative_pixels": 282,
+        "policy": "Original oriented image pixel grid; both masks empty gives Dice=IoU=1; one empty gives 0."
+      },
+      "predicted_pixels": 5559,
+      "inference_seconds": 0.2737679000128992
+    },
+    {
+      "source": "brisc2025/segmentation_task/test/images/brisc2025_test_00167_gl_sa_t1.jpg",
+      "input_sha256": "7950821b4e6a71354ebc99c594f25711b0113588855384a26914f5e963075c0f",
+      "metrics": {
+        "dice": 0.871968962172648,
+        "iou": 0.7730008598452278,
+        "true_positive_pixels": 3596,
+        "false_positive_pixels": 961,
+        "false_negative_pixels": 95,
+        "policy": "Original oriented image pixel grid; both masks empty gives Dice=IoU=1; one empty gives 0."
+      },
+      "predicted_pixels": 4557,
+      "inference_seconds": 0.25458700000308454
+    },
+    {
+      "source": "brisc2025/segmentation_task/test/images/brisc2025_test_00254_gl_sa_t1.jpg",
+      "input_sha256": "e0ff0040d0c3ccf69ec8553d478d2a05ff410a4aef84307da60234ccc942e4da",
+      "metrics": {
+        "dice": 0.7963934867447181,
+        "iou": 0.6616726296958855,
+        "true_positive_pixels": 8877,
+        "false_positive_pixels": 3958,
+        "false_negative_pixels": 581,
+        "policy": "Original oriented image pixel grid; both masks empty gives Dice=IoU=1; one empty gives 0."
+      },
+      "predicted_pixels": 12835,
+      "inference_seconds": 0.266060900001321
+    },
+    {
+      "source": "brisc2025/segmentation_task/test/images/brisc2025_test_00255_me_ax_t1.jpg",
+      "input_sha256": "39cabdc25d698ca1fbb4db79efa72184c0f92d854c553ee098d74ccbcfa38fef",
+      "metrics": {
+        "dice": 0.8775584352670461,
+        "iou": 0.7818299525248166,
+        "true_positive_pixels": 3623,
+        "false_positive_pixels": 126,
+        "false_negative_pixels": 885,
+        "policy": "Original oriented image pixel grid; both masks empty gives Dice=IoU=1; one empty gives 0."
+      },
+      "predicted_pixels": 3749,
+      "inference_seconds": 0.2945074000163004
+    },
+    {
+      "source": "brisc2025/segmentation_task/test/images/brisc2025_test_00391_me_ax_t1.jpg",
+      "input_sha256": "febc01df86073914cb1fead59436457605068aaac8e5186cce20f26606df70f2",
+      "metrics": {
+        "dice": 0.7930881701373504,
+        "iou": 0.6571218795888399,
+        "true_positive_pixels": 3580,
+        "false_positive_pixels": 1484,
+        "false_negative_pixels": 384,
+        "policy": "Original oriented image pixel grid; both masks empty gives Dice=IoU=1; one empty gives 0."
+      },
+      "predicted_pixels": 5064,
+      "inference_seconds": 0.3268534999806434
+    },
+    {
+      "source": "brisc2025/segmentation_task/test/images/brisc2025_test_00392_me_co_t1.jpg",
+      "input_sha256": "32e58268a4a9d3f82caec378c1065311360f4212c2ab72a1ca6f1ef8ffcca92b",
+      "metrics": {
+        "dice": 0.8837553436369615,
+        "iou": 0.7917219030785093,
+        "true_positive_pixels": 5375,
+        "false_positive_pixels": 976,
+        "false_negative_pixels": 438,
+        "policy": "Original oriented image pixel grid; both masks empty gives Dice=IoU=1; one empty gives 0."
+      },
+      "predicted_pixels": 6351,
+      "inference_seconds": 0.2831727000302635
+    },
+    {
+      "source": "brisc2025/segmentation_task/test/images/brisc2025_test_00477_me_co_t1.jpg",
+      "input_sha256": "98856776c0ee4689f1239b0e57fff6e3645566b4e1c1a529dd36f5f38137d131",
+      "metrics": {
+        "dice": 0.9114048503386498,
+        "iou": 0.8372303060712494,
+        "true_positive_pixels": 8343,
+        "false_positive_pixels": 1237,
+        "false_negative_pixels": 385,
+        "policy": "Original oriented image pixel grid; both masks empty gives Dice=IoU=1; one empty gives 0."
+      },
+      "predicted_pixels": 9580,
+      "inference_seconds": 0.27486730000237003
+    },
+    {
+      "source": "brisc2025/segmentation_task/test/images/brisc2025_test_00478_me_sa_t1.jpg",
+      "input_sha256": "9dcd34c5328623dc7c0f06cbb7598017efbb3b6b59d3a70c099343922290de99",
+      "metrics": {
+        "dice": 0.9391767554479419,
+        "iou": 0.8853282205788369,
+        "true_positive_pixels": 9697,
+        "false_positive_pixels": 766,
+        "false_negative_pixels": 490,
+        "policy": "Original oriented image pixel grid; both masks empty gives Dice=IoU=1; one empty gives 0."
+      },
+      "predicted_pixels": 10463,
+      "inference_seconds": 0.3860236000036821
+    },
+    {
+      "source": "brisc2025/segmentation_task/test/images/brisc2025_test_00560_me_sa_t1.jpg",
+      "input_sha256": "ea3670920245f00237d3c32fbe40fa421ffa7a2b236bc3fc51c92e04b894ce33",
+      "metrics": {
+        "dice": 0.9020768070541826,
+        "iou": 0.8216210504068477,
+        "true_positive_pixels": 7775,
+        "false_positive_pixels": 1594,
+        "false_negative_pixels": 94,
+        "policy": "Original oriented image pixel grid; both masks empty gives Dice=IoU=1; one empty gives 0."
+      },
+      "predicted_pixels": 9369,
+      "inference_seconds": 0.28742639999836683
+    },
+    {
+      "source": "brisc2025/segmentation_task/test/images/brisc2025_test_00701_pi_ax_t1.jpg",
+      "input_sha256": "97a04c2e1d1994e8a0bd27662e357f3fa3ec7fd847e0f0773f7ef013abe7e167",
+      "metrics": {
+        "dice": 0.599883347914844,
+        "iou": 0.42845240574880233,
+        "true_positive_pixels": 2057,
+        "false_positive_pixels": 2653,
+        "false_negative_pixels": 91,
+        "policy": "Original oriented image pixel grid; both masks empty gives Dice=IoU=1; one empty gives 0."
+      },
+      "predicted_pixels": 4710,
+      "inference_seconds": 0.2972128000110388
+    },
+    {
+      "source": "brisc2025/segmentation_task/test/images/brisc2025_test_00824_pi_ax_t1.jpg",
+      "input_sha256": "5b15d94d8e5cfe8cb0b729a4872f1579d3e261f6f602fd314df860c83ec12f81",
+      "metrics": {
+        "dice": 0.7742320310169997,
+        "iou": 0.6316301703163018,
+        "true_positive_pixels": 1298,
+        "false_positive_pixels": 185,
+        "false_negative_pixels": 572,
+        "policy": "Original oriented image pixel grid; both masks empty gives Dice=IoU=1; one empty gives 0."
+      },
+      "predicted_pixels": 1483,
+      "inference_seconds": 0.2483962999540381
+    },
+    {
+      "source": "brisc2025/segmentation_task/test/images/brisc2025_test_00825_pi_co_t1.jpg",
+      "input_sha256": "3e802dd22f483ce4d442fe2c7f1890c1c810ec8c1131b364fd4e4593bf0f268a",
+      "metrics": {
+        "dice": 0.8469479353680431,
+        "iou": 0.7345270533281433,
+        "true_positive_pixels": 3774,
+        "false_positive_pixels": 1093,
+        "false_negative_pixels": 271,
+        "policy": "Original oriented image pixel grid; both masks empty gives Dice=IoU=1; one empty gives 0."
+      },
+      "predicted_pixels": 4867,
+      "inference_seconds": 0.3675021000090055
+    },
+    {
+      "source": "brisc2025/segmentation_task/test/images/brisc2025_test_00914_pi_co_t1.jpg",
+      "input_sha256": "75ff784d60fef5bdcd6602140652a05a112ffd092672a123ec3ab888b98b301e",
+      "metrics": {
+        "dice": 0.7686483167911593,
+        "iou": 0.6242313445238491,
+        "true_positive_pixels": 3756,
+        "false_positive_pixels": 2168,
+        "false_negative_pixels": 93,
+        "policy": "Original oriented image pixel grid; both masks empty gives Dice=IoU=1; one empty gives 0."
+      },
+      "predicted_pixels": 5924,
+      "inference_seconds": 0.3621830999618396
+    },
+    {
+      "source": "brisc2025/segmentation_task/test/images/brisc2025_test_00915_pi_sa_t1.jpg",
+      "input_sha256": "1bbfc73287665f5100d95ebde02161334e78ea680a36aa3a75ab7f32c0744728",
+      "metrics": {
+        "dice": 0.7847924659923264,
+        "iou": 0.6458094144661309,
+        "true_positive_pixels": 1125,
+        "false_positive_pixels": 178,
+        "false_negative_pixels": 439,
+        "policy": "Original oriented image pixel grid; both masks empty gives Dice=IoU=1; one empty gives 0."
+      },
+      "predicted_pixels": 1303,
+      "inference_seconds": 0.21564150002086535
+    },
+    {
+      "source": "brisc2025/segmentation_task/test/images/brisc2025_test_01000_pi_sa_t1.jpg",
+      "input_sha256": "60d58514c5b307c5615198de6c54f37c8340738b4ca18a4f682a5a2631d8e923",
+      "metrics": {
+        "dice": 0.865214963707426,
+        "iou": 0.7624483369415469,
+        "true_positive_pixels": 3874,
+        "false_positive_pixels": 1080,
+        "false_negative_pixels": 127,
+        "policy": "Original oriented image pixel grid; both masks empty gives Dice=IoU=1; one empty gives 0."
+      },
+      "predicted_pixels": 4954,
+      "inference_seconds": 0.21689910005079582
+    },
+    {
+      "source": "brisc2025/classification_task/test/no_tumor/brisc2025_test_00561_no_ax_t1.jpg",
+      "input_sha256": "5ec22355eccda859363dca276fafa40d64cb036bf2f606f8634f5d14ec8e1741",
+      "metrics": null,
+      "predicted_pixels": 0,
+      "inference_seconds": 0.23191899998346344
+    },
+    {
+      "source": "brisc2025/classification_task/test/no_tumor/brisc2025_test_00612_no_ax_t1.jpg",
+      "input_sha256": "33de3570a598452365d3e582ed8bc483b3da52f4e000a7dc8a10932a9ccb23a3",
+      "metrics": null,
+      "predicted_pixels": 0,
+      "inference_seconds": 0.214802700036671
+    },
+    {
+      "source": "brisc2025/classification_task/test/no_tumor/brisc2025_test_00613_no_co_t1.jpg",
+      "input_sha256": "d412187d1b93b4e94fe4512dbd897c9af1c5036bee4c36ea096c0a413f23dc1d",
+      "metrics": null,
+      "predicted_pixels": 1133,
+      "inference_seconds": 0.21475099999224767
+    },
+    {
+      "source": "brisc2025/classification_task/test/no_tumor/brisc2025_test_00660_no_co_t1.jpg",
+      "input_sha256": "8d7abec740c4d59168bd40626034ce16cc2054a6b46cdf913d1dcaab2671397a",
+      "metrics": null,
+      "predicted_pixels": 40,
+      "inference_seconds": 0.21566919999895617
+    },
+    {
+      "source": "brisc2025/classification_task/test/no_tumor/brisc2025_test_00661_no_sa_t1.jpg",
+      "input_sha256": "c89b2fa414e099253339f4efd7a9ca131dda3e3ef0b8d98f4cbd4726c9160faf",
+      "metrics": null,
+      "predicted_pixels": 0,
+      "inference_seconds": 0.21685080003226176
+    },
+    {
+      "source": "brisc2025/classification_task/test/no_tumor/brisc2025_test_00700_no_sa_t1.jpg",
+      "input_sha256": "619835ff32825930b5584b0d903882274a1d82f1f14d720469cb1c8e083802ef",
+      "metrics": null,
+      "predicted_pixels": 0,
+      "inference_seconds": 0.21612180001102388
+    }
+  ]
+}

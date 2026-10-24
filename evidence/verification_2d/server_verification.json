@@ -1,0 +1,83 @@
+{
+  "port": 8768,
+  "slice_run": "090c8d4d9ce2448b91d842ad7c0fa3ca",
+  "volume_run": "35c9914250214685b58fed76c6ea48e8",
+  "slice_result": {
+    "input_mode": "single_slice",
+    "model_name": "BRISC SegFormer-B5 \u00b7 2D binary tumour segmentation",
+    "model": {
+      "name": "BRISC SegFormer-B5 \u00b7 2D binary tumour segmentation",
+      "device": "cuda",
+      "gpu": "NVIDIA GeForce GTX 1650",
+      "head_revision": "04c94c44998bd793e97dd8c1a539fbfbd21c958b",
+      "base_revision": "739f5d4692954e4a185eac280dec1ba5a7d52f1d",
+      "transformers_version": "4.57.6",
+      "torch_version": "2.5.1+cu121",
+      "decoder_key_alias": "linear_projections -> linear_c; exact decoder keys and tensor shapes required"
+    },
+    "uploaded_names": {
+      "image": "brisc2025_test_00086_gl_co_t1.jpg"
+    },
+    "original_size": [
+      512,
+      512
+    ],
+    "processed_shape": [
+      512,
+      512
+    ],
+    "reference_provided": false,
+    "metrics": null,
+    "predicted_pixels": 4616,
+    "predicted_area_percent": 1.7608642578125,
+    "inference_seconds": 5.266823599988129,
+    "total_processing_seconds": 7.986205099965446,
+    "model_state_unchanged": true,
+    "checkpoint_unchanged": true,
+    "model_state_sha256": "320ad570122462900266545c5139ae5e0b1c7e56d92202677b91d0043a206bc2",
+    "checkpoint_sha256": {
+      "base_model.bin": "a3dbf2d7a9912203078f304d88df8cfee9fd752ca2d2413f82036bdb02c5e7df",
+      "seg_best.pt": "20947b5b737b47de3631fdb9930f6d81c79b92703c8a65f554b948e1ddfd07ee"
+    },
+    "input_sha256": {
+      "image": "6674e11f2138d476e985e5ab20b8550b049c9bc205341a753a500ac2d420321e"
+    },
+    "preprocessing": "EXIF transpose; RGB display channels (not MRI modalities); black centre-pad square; PIL bilinear 512x512; /255; ImageNet mean/std.",
+    "mask_geometry": "Argmax of bilinear-upsampled 512x512 logits; nearest resize to padded square; crop to original oriented image. PNG labels 0 background / 255 predicted tumour.",
+    "limitations": "Research demo for individual T1-weighted brain MRI slices, preferably contrast-enhanced and similar to BRISC. Unvalidated on arbitrary screenshots, other sequences or unseen scanners. A mask is a model prediction, not a diagnosis. An empty mask does not rule out tumour. No TC/WT/ET or physical-volume measurement is available from a JPG/PNG.",
+    "metric_units": "pixels; physical spacing unknown",
+    "training_performed": false,
+    "downloads": [
+      "prediction_bundle.zip",
+      "report.json",
+      "mask.png",
+      "overlay.png",
+      "image.png"
+    ]
+  },
+  "volume_metrics": {
+    "TC": {
+      "dice": 0.9632935907522847,
+      "hd95_mm": 1.4142135381698608,
+      "hd95_status": "finite",
+      "reference_voxels": 32983,
+      "predicted_voxels": 33109
+    },
+    "WT": {
+      "dice": 0.9651412129098473,
+      "hd95_mm": 1.7320507764816284,
+      "hd95_status": "finite",
+      "reference_voxels": 159632,
+      "predicted_voxels": 167746
+    },
+    "ET": {
+      "dice": 0.9497055572967356,
+      "hd95_mm": 1.4142135381698608,
+      "hd95_status": "finite",
+      "reference_voxels": 30477,
+      "predicted_voxels": 30146
+    }
+  },
+  "three_dimensional_masks_identical_to_previous": true,
+  "three_dimensional_model_and_checkpoint_unchanged": true
+}

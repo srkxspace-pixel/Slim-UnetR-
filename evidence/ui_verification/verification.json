@@ -1,0 +1,58 @@
+{
+  "real_case": "D:\\SRM Projects\\datasets\\Task01_BrainTumour\\imagesTr\\BRATS_409.nii.gz",
+  "four_dimensional_run": "56495c94f7334087b57ebb0b803af8e3",
+  "four_files_run": "c48d2456bc31425791d8ad7b823cdac4",
+  "predictions_identical": true,
+  "no_training": true,
+  "no_synthetic_inputs": true,
+  "metrics": {
+    "TC": {
+      "dice": 0.9632935907522847,
+      "hd95_mm": 1.4142135381698608,
+      "hd95_status": "finite",
+      "reference_voxels": 32983,
+      "predicted_voxels": 33109
+    },
+    "WT": {
+      "dice": 0.9651412129098473,
+      "hd95_mm": 1.7320507764816284,
+      "hd95_status": "finite",
+      "reference_voxels": 159632,
+      "predicted_voxels": 167746
+    },
+    "ET": {
+      "dice": 0.9497055572967356,
+      "hd95_mm": 1.4142135381698608,
+      "hd95_status": "finite",
+      "reference_voxels": 30477,
+      "predicted_voxels": 30146
+    }
+  },
+  "four_file_metrics": null,
+  "verified": [
+    "HTTP upload in both formats",
+    "optional real reference",
+    "no reference / no metrics",
+    "all three planes and panels",
+    "downloaded ZIP and NIfTI geometry",
+    "CSRF/host/origin checks",
+    "concurrent inference rejected",
+    "invalid view and download rejected"
+  ],
+  "checkpoint_sha256": "8adbc8ce26c67a6783da8aea03edb95f530c16b4416185501a2711472677d5f4",
+  "matches_previous_local_evaluation": true,
+  "browser_upload_run": "e12242ab19da4bb7ba6f24bf5a0eb77f",
+  "browser_real_example_run": "e9873280dc7f4ead8827ad60f2e622a9",
+  "browser_result_matches_previous_local_evaluation": true,
+  "browser_controls_verified": [
+    "modality",
+    "axial/coronal/sagittal",
+    "region",
+    "slice",
+    "opacity"
+  ],
+  "browser_report_download_verified": true,
+  "exported_nifti_units": "mm",
+  "browser_refresh_recovery_verified": true,
+  "screenshot": "outputs/ui_verification/local_ui_demo.jpg"
+}

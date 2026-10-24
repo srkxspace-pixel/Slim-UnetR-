@@ -1,0 +1,56 @@
+{
+  "all_97_case_ids_match_local_partition": true,
+  "all_97_saved_predictions_and_dice_verified": true,
+  "jsonl_csv_report_counts_agree": true,
+  "aggregates_independently_recomputed": true,
+  "checkpoint_hash_unchanged": true,
+  "model_state_hashes_agree": true,
+  "independent_kdtree_hd95_checks": [
+    {
+      "case": "BRATS_346",
+      "region": "TC",
+      "independent_hd95_mm": 56.67185083157131
+    },
+    {
+      "case": "BRATS_346",
+      "region": "WT",
+      "independent_hd95_mm": 60.876925020897694
+    },
+    {
+      "case": "BRATS_346",
+      "region": "ET",
+      "independent_hd95_mm": 40.4685053110887
+    },
+    {
+      "case": "BRATS_128",
+      "region": "TC",
+      "independent_hd95_mm": 4.123105625617661
+    },
+    {
+      "case": "BRATS_128",
+      "region": "WT",
+      "independent_hd95_mm": 46.27688376616019
+    },
+    {
+      "case": "BRATS_128",
+      "region": "ET",
+      "independent_hd95_mm": 115.92302033551401
+    }
+  ],
+  "empty_region_cases": [
+    {
+      "case": "BRATS_026",
+      "region": "ET",
+      "ground_truth_voxels": 0,
+      "prediction_voxels": 41,
+      "hd95_mm": "Infinity"
+    },
+    {
+      "case": "BRATS_024",
+      "region": "ET",
+      "ground_truth_voxels": 0,
+      "prediction_voxels": 3340,
+      "hd95_mm": "Infinity"
+    }
+  ]
+}
